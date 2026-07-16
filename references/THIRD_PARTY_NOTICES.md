@@ -2,7 +2,11 @@
 
 ## Owner-provided publication corpus
 
-The v0.3.1 style calibration used a separately supplied owner archive plus two additional owner-supplied files, for 42 analyzed papers in total. One addition is a licensed IEEE publisher Version of Record and one is an author manuscript. The archive, PDFs, manuscript and extracted article text are not bundled. Tracked outputs are limited to bibliographic metadata, checksums, derived measurements and paraphrased paper cards. Publisher and coauthor rights remain unaffected. A local checksum is included only for reproducible private verification.
+The local sentence-style component uses a separately supplied owner archive plus two additional owner-supplied files, for 42 analyzed papers in total. One addition is a licensed IEEE publisher Version of Record and one is an author manuscript. The archive, PDFs, manuscript and extracted article text are not bundled. Tracked outputs are limited to bibliographic metadata, checksums, derived measurements and paraphrased paper cards. Publisher and coauthor rights remain unaffected. A local checksum is included only for reproducible private verification.
+
+## Open-access research-doctrine expansion
+
+Version 0.4.0 adds derived research-doctrine evidence from 31 nonduplicate open-access journal articles. Open access was used to verify and read the source, not as permission to republish its PDF, extracted text, figures, tables, equations, or a substitute reading note. The public repository includes a bibliographic manifest and independently worded cross-paper rules only. Article-specific licences and publisher rights remain in force.
 
 ## Three-repository teaching family
 
@@ -22,7 +26,7 @@ This repository contains an optional interoperability overlay for the public `ac
 
 ## Publisher content
 
-IEEE and other publisher papers used for private analysis are not included. Bibliographic metadata, derived counts, paraphrased rhetorical maps and brief common phrases do not transfer ownership of article text.
+IEEE and other publisher papers used for analysis are not included, regardless of whether the source was licensed or open access. Bibliographic metadata, derived counts, paraphrased rhetorical maps and brief common phrases do not transfer ownership of article text.
 
 ## Graphs, datasets and testbed material
 

@@ -1,6 +1,6 @@
-profile_id: lu-xing-yang-ieee-transactions-current-v0.3.1
-version: 0.3.1
-status: attachment-key-corpus-calibrated
+profile_id: lu-xing-yang-ieee-transactions-current-v0.4.0
+version: 0.4.0
+status: expanded-partial-calibration
 last_updated: 2026-07-16
 owner: Lu-Xing Yang
 language: English
@@ -20,6 +20,9 @@ scope:
   target_venues: [TIFS, TDSC, TSMC, TNSE, TCSS]
   evidence_boundary:
     owner_provided_fulltexts_analyzed: 42
+    verified_open_access_fulltexts_analyzed: 31
+    expanded_verified_fulltexts_analyzed: 73
+    deep_reading_notes_completed: 73
     core_voice_first_or_corresponding: 20
     ieee_transactions_fulltexts_in_attachment: 17
     selected_transactions_indexed: 18
@@ -30,15 +33,17 @@ scope:
     full_publication_universe_complete: false
     copyrighted_fulltext_in_release: false
     caution: >-
-      The attachment is a key-paper full-text corpus, not a verified complete
-      publication universe. Use Tier A papers for sentence-level style and the
-      broader corpus for research architecture.
+      The 73-paper set is a verified-full-text working corpus, not a verified
+      complete publication universe. Use the role-weighted local corpus for
+      sentence-level style and the expanded set for research architecture,
+      correction doctrine, and theory-code-evidence consistency gates.
   calibration_limits:
     - corresponding_author_status_does_not_prove_section_level_drafting
     - many_credit_roles_remain_unknown
     - abstract_level_metrics_are_stronger_than_section_level_microstyle_metrics
     - tdsc_tsmc_and_tcss_tier_a_venue_samples_are_thin
     - complete_publication_universe_and_collaborator_specific_voice_remain_open
+    - open_access_expansion_does_not_change_core_voice_sentence_metrics
 
 priority_order:
   - truth_evidence_mathematical_validity_ethics

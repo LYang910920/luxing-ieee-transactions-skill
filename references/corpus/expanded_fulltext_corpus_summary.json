@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-07-16",
+  "status": "expanded-partial-calibration",
+  "identity_anchor": {
+    "name": "Lu-Xing Yang",
+    "orcid": "0000-0002-9229-5787"
+  },
+  "counts": {
+    "owner_provided_fulltexts": 42,
+    "verified_open_access_fulltexts": 31,
+    "verified_fulltexts_total": 73,
+    "deep_read_notes_completed": 73,
+    "open_access_pdf_fulltexts": 30,
+    "open_access_complete_publisher_html": 1,
+    "core_voice_first_or_corresponding": 20,
+    "local_ieee_transactions_fulltexts": 17
+  },
+  "completion_audit": {
+    "result": "pass_with_nonblocking_metadata_warnings",
+    "count_guard": "73_expected_and_73_actual",
+    "expected_records_matched_once": 73,
+    "actual_notes_matched": 73,
+    "doi_exact_matches": 72,
+    "title_exact_fallback_matches": 1,
+    "duplicate_doi_groups": 0,
+    "duplicate_title_groups": 0,
+    "current_note_lint_passes": 73,
+    "note_lint_warnings": 0,
+    "six_gate_passes": 73,
+    "writer_receipts_verified_current": 71,
+    "writer_receipts_verified_equivalent_copy": 2,
+    "missing_writer_receipts": 0,
+    "image_files": 391,
+    "missing_local_image_references": 0,
+    "artifact_json_parse_errors": 0,
+    "blocking_findings": 0,
+    "nonblocking_findings": {
+      "directory_year_mismatches": 7,
+      "missing_doi_metadata": 1,
+      "sha_identical_equivalent_writer_receipts": 2
+    }
+  },
+  "calibration_use": {
+    "sentence_level_style": "Role-weighted 42-paper local corpus; open-access additions do not automatically establish personal sentence authorship.",
+    "research_architecture_and_correction_doctrine": "All 73 verified full-text deep readings.",
+    "public_outputs": "Bibliographic metadata, aggregate counts, independently worded derived rules, tests, templates, metrics, checksums, and paraphrased cards only."
+  },
+  "open_access_inclusion_rule": "A nonduplicate journal article entered the 31-paper expansion only after an actual PDF or complete publisher HTML was verified for full-text reading.",
+  "complete_publication_universe": false,
+  "article_fulltext_or_notes_included": false,
+  "limitations": [
+    "The verified working corpus is not proof that every publication has been discovered or lawfully acquired in full text.",
+    "Coauthorship and open access do not establish personal sentence-level authorship.",
+    "Seven workspace note-directory years differ from note metadata because online-first and issue-year conventions were not normalized; DOI/title matching remains unique.",
+    "One expected record lacks DOI metadata and is matched by exact normalized title.",
+    "Source PDFs, extracted text, figures, evidence bundles, and per-paper deep-reading notes are excluded from the public skill."
+  ]
+}

@@ -17,7 +17,17 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate_skill import validate  # noqa: E402
 
 
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "private", "raw", "checkpoints"}
+EXCLUDED_PARTS = {
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".git",
+    ".venv",
+    "private",
+    "raw",
+    "checkpoints",
+}
 EXCLUDED_SUFFIXES = {".pyc", ".pdf", ".doc", ".docx", ".ppt", ".pptx", ".zip", ".pcap", ".pcapng", ".pt", ".pth", ".ckpt"}
 
 
@@ -52,7 +62,7 @@ def build(root: Path, output_dir: Path) -> tuple[Path, Path, int]:
     version = manifest.get("version", "0.0.0")
     output_dir.mkdir(parents=True, exist_ok=True)
     archive = output_dir / f"luxing-ieee-transactions-skill-v{version}.zip"
-    prefix = root.name
+    prefix = str(manifest.get("name") or root.name)
     count = 0
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as bundle:
         for path, relative in _files(root):

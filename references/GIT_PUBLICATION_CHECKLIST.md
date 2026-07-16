@@ -26,15 +26,17 @@ topics:
 - [ ] Owner explicitly authorizes publication.
 - [ ] Repository name and MIT licence for this SKILL are confirmed.
 - [ ] `CITATION.cff` repository URL/DOI is added when available.
-- [ ] Version and release status agree across `VERSION`, `pyproject.toml`, `SKILL.md`, `project_manifest.json` and `CITATION.cff`.
+- [ ] Version and release status agree across the READMEs, style profile, `project_manifest.json` and runtime `__version__`; any optional `VERSION`, `pyproject.toml` or `CITATION.cff` added later agrees too.
 - [ ] No upstream `academic-research-skills` text is copied.
 - [ ] No nested copy of any of the three tutorial repositories exists.
 - [ ] Foundation no-blanket-licence boundary has been reviewed and respected.
 - [ ] Note 1/Note 2 path-specific licence notices have been reviewed.
 - [ ] Repository snapshot commits and retrieval dates have been refreshed.
 - [ ] No publisher PDF, owner paper archive, extracted article text, supplementary ZIP, review file or accepted manuscript is included.
-- [ ] `corpus/private/` contains only its tracked README in the release.
+- [ ] No `private/`, `raw/` or checkpoint directory is present in the tracked tree or release.
 - [ ] `corpus/local_attachment_manifest.csv` contains only bibliographic/derived fields and hashes, not article text.
+- [ ] `corpus/open_access_fulltext_manifest.csv` contains only public bibliographic/provenance fields, not downloaded files or extracted text.
+- [ ] Per-paper deep-reading notes, figure crops, evidence bundles and raw full text remain outside the release.
 - [ ] All attachment paper cards are paraphrased summaries with no long quotation, copied table, equation or figure.
 - [ ] The release status is not `full-corpus-calibrated` unless the full-corpus audit has actually passed.
 - [ ] No raw graph/dataset, PCAP, malware sample, checkpoint, testbed log or private telemetry is included.
@@ -44,10 +46,11 @@ topics:
 - [ ] No credentials, cookies, tokens, browser profiles, absolute private paths or user-specific cache paths are present.
 - [ ] All temporally unstable metadata is dated or omitted.
 - [ ] `python -m unittest discover -s tests -v` passes.
-- [ ] `python smoke_all.py` passes.
-- [ ] `python tools/validate_skill.py` passes.
+- [ ] `python scripts/luxing_ieee.py validate` passes.
+- [ ] `python scripts/validate_skill.py --json` returns `ok: true`.
+- [ ] The system `skill-creator/scripts/quick_validate.py` passes against the repository root.
 - [ ] `analyze-local-corpus` has been checked for derived-only output; `recommend-topology`, `audit-topology` and `audit-evidence` smoke examples pass.
-- [ ] Release ZIP listing and `SHA256SUMS` have been independently inspected.
+- [ ] Release ZIP listing and its generated `<archive>.sha256` file have been independently inspected.
 - [ ] Extracted release has been re-tested, not only the working tree.
 
 ## Suggested first commits
@@ -63,9 +66,9 @@ feat: add metrics linter audits and tests
 docs: add release provenance licence and publication notes
 ```
 
-## Suggested v0.3.1 release note
+## Suggested v0.4.0 release note
 
-This `attachment-key-corpus-calibrated` release provides an executable IEEE Transactions research-and-writing workflow derived from a private-input 42-paper key-publication corpus, including 20 first/corresponding-author core-voice papers and 17 IEEE Transactions full texts. It adds a 2023 TIFS impulsive-APT publisher record and a 2026 TDSC-matched Stackelberg employee-compliance author manuscript as Tier C research-architecture evidence. All 17 owner-priority selected Transactions rows now have private full text; one different-subfield row is explicitly owner-deprioritized. The release distributes only derived metrics, checksums and paraphrased paper cards. It does not claim a verified complete publication universe and bundles no article full text, tutorial source, graph dataset or third-party data.
+This `expanded-partial-calibration` release provides an executable IEEE Transactions research-and-writing workflow informed by 73 verified full-text deep readings: 42 owner-provided papers and 31 nonduplicate open-access journal articles. The expanded corpus adds cross-paper mechanism, state/unit, theorem/dependency, delay/fractional/impulse, Hamiltonian/solver, baseline/probability, leakage, and text–figure consistency gates. Sentence-level personal-style metrics remain anchored to the role-weighted 42-paper local corpus, including 20 first/corresponding-author core-voice papers and 17 IEEE Transactions full texts. The release distributes only lawful bibliographic metadata, aggregate counts, derived rules and metrics, checksums, and paraphrased paper cards. It does not claim a verified complete publication universe and bundles no PDF, extracted text, per-paper reading note, tutorial source, graph dataset, or third-party data.
 
 ## Public/private split option
 

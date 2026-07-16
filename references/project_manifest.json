@@ -1,8 +1,8 @@
 {
   "name": "luxing-ieee-transactions-skill",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "release_date": "2026-07-16",
-  "status": "attachment-key-corpus-calibrated",
+  "status": "expanded-partial-calibration",
   "owner": "Lu-Xing Yang",
   "orcid": "0000-0002-9229-5787",
   "target_venues": [
@@ -35,6 +35,10 @@
   "python_minimum": "3.10",
   "recommended_work_branch": "work/attachment-corpus-topology-first-integration",
   "owner_provided_fulltext_papers": 42,
+  "verified_open_access_fulltext_papers": 31,
+  "expanded_verified_fulltext_papers": 73,
+  "deep_read_notes_completed": 73,
+  "sentence_style_source_status": "attachment-key-corpus-calibrated",
   "attachment_text_extractable_without_ocr": 42,
   "core_voice_first_or_corresponding_papers": 20,
   "attachment_ieee_transactions_papers": 17,
@@ -48,5 +52,8 @@
   "synthetic_simulation_generation_support": true,
   "node_level_topology_audit": true,
   "local_attachment_manifest": "corpus/local_attachment_manifest.csv",
-  "local_corpus_metrics": "corpus/local_corpus_metrics.json"
+  "local_corpus_metrics": "corpus/local_corpus_metrics.json",
+  "open_access_fulltext_manifest": "corpus/open_access_fulltext_manifest.csv",
+  "expanded_fulltext_corpus_summary": "corpus/expanded_fulltext_corpus_summary.json",
+  "fulltext_corpus_derived_doctrine": "FULLTEXT_CORPUS_DERIVED_DOCTRINE.md"
 }

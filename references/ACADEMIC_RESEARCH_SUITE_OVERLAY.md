@@ -11,6 +11,7 @@ references/JOURNAL_OVERLAYS.yaml
 references/CLAIM_LANGUAGE_RULES.yaml
 references/corpus/local_corpus_metrics.json
 references/ATTACHMENT_CORPUS_ANALYSIS.md
+references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md
 ```
 
 When the Codex-native `academic-research-suite` is installed, use it for generic research orchestration and use this skill as the personal research-direction, voice, journal-fit, and evidence-gate overlay. Keep this skill independently usable when the suite is absent.
@@ -18,11 +19,13 @@ When the Codex-native `academic-research-suite` is installed, use it for generic
 Record:
 
 ```yaml
-style_profile_id: lu-xing-yang-ieee-transactions-current-v0.3.1
-style_profile_status: attachment-key-corpus-calibrated
+style_profile_id: lu-xing-yang-ieee-transactions-current-v0.4.0
+style_profile_status: expanded-partial-calibration
 style_priority: soft
 core_voice_papers: 20
 owner_key_papers_analyzed: 42
+verified_open_access_papers_analyzed: 31
+expanded_fulltext_deep_reads: 73
 selected_transactions_private_fulltext_coverage: 17/18
 owner_priority_transactions_private_fulltext_coverage: 17/17
 owner_deprioritized_transactions: 1
@@ -75,3 +78,5 @@ The evaluator must run the claim gates and inspect:
 - identifiability and unilateral deviations where relevant;
 - limitations and reality-status wording;
 - no copyrighted article text, tutorial source or raw third-party data in release artefacts.
+
+For model, theorem, delay/fractional/impulse, optimal-control, game, solver, or experiment-consistency claims, also apply `FULLTEXT_CORPUS_DERIVED_DOCTRINE.md` and instantiate the cross-paper consistency ledger when variants share a claim.

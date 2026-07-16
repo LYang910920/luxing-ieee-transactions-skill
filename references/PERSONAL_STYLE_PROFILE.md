@@ -1,22 +1,23 @@
 # Current Lu-Xing Yang IEEE Transactions Style Profile
 
-**Version:** 0.3.1  
-**Status:** `attachment-key-corpus-calibrated`
+**Version:** 0.4.0
+**Status:** `expanded-partial-calibration`
 
 ## Evidence base
 
-The profile now uses 42 owner-provided full-text papers from 2012–2026. Seventeen are IEEE Transactions papers, 20 form the first/corresponding-author core-voice subset, and 19 are from 2024 onward. The selected 18-row Transactions manifest has 17 private-full-text-covered rows; these are all 17 rows the owner currently treats as priority, while one different-subfield row is explicitly deprioritized.
+The research doctrine now uses a verified 73-paper full-text working corpus: 42 owner-provided papers plus 31 nonduplicate open-access journal articles discovered through the owner's publication identity and verified to an actual PDF or complete publisher HTML. The 42-paper local corpus contains 17 IEEE Transactions papers, a 20-paper first/corresponding-author core-voice subset, and 19 papers from 2024 onward. The selected 18-row Transactions manifest has 17 private-full-text-covered priority rows and one explicitly deprioritized different-subfield row.
 
-The attachment is a key-paper corpus, not a verified complete publication universe. Sentence-level preferences are driven by first/corresponding-author or documented original-draft papers. Other coauthored papers primarily inform research architecture and method evolution.
+The expanded set is still not a verified complete publication universe. Sentence-level preferences remain driven by the role-weighted local corpus, especially first/corresponding-author or documented original-draft papers. The 31 open-access additions strengthen research architecture, mathematical/algorithmic quality gates, method evolution, and consistency checks; they do not automatically become personal sentence-voice evidence.
 
 ## Calibration limits
 
 - The 20-paper core-voice tier is a weighting set, not proof that every sentence or section was personally drafted by the owner. Corresponding-author status remains a signal, and many contribution roles are still unknown.
-- The two v0.3.1 additions are Tier C research-architecture evidence. One is a licensed publisher Version of Record; the other is an author manuscript whose publisher-final metadata and appendices remain unresolved. Neither addition changes the 20-paper personal-voice core.
+- The expanded 73-paper deep-reading set is architecture and correction evidence. It does not change the 20-paper personal-voice core or the attachment-derived quantitative sentence targets.
 - Abstract-level architecture and sentence rhythm are better supported than paragraph-level, section-specific, collaborator-specific, or punctuation-level microstyle.
 - TIFS has the strongest venue-specific Tier-A signal; TDSC, TSMC, and TCSS personal-voice samples remain too thin for strong author-by-venue claims.
 - Topology-first simulation, RL/MARL/MPC, and PINN/PIDL include emerging or repository-derived capability. Do not describe them as equally mature publication-corpus directions.
 - Use `references/corpus/local_corpus_metrics.json` as the quantitative source of truth and treat prose summaries as rounded interpretations.
+- Use `references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md` for cross-paper model/theory/code/evidence checks and `references/corpus/open_access_fulltext_manifest.csv` for the public 31-paper expansion boundary.
 
 ## One-line signature
 
@@ -87,4 +88,4 @@ When real propagation or attack–defense trajectories cannot be obtained:
 6. use matched baselines, multiple graph/parameter seeds, holdouts, uncertainty, and failure logs;
 7. scope every conclusion to the declared model/topology/parameter assumptions.
 
-See `references/ATTACHMENT_CORPUS_ANALYSIS.md` and `references/TOPOLOGY_FIRST_EXPERIMENT_PROTOCOL.md`.
+See `references/ATTACHMENT_CORPUS_ANALYSIS.md`, `references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md`, and `references/TOPOLOGY_FIRST_EXPERIMENT_PROTOCOL.md`.

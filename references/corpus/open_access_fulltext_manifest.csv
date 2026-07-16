@@ -1,0 +1,32 @@
+year,title,doi,venue,oa_status,landing_page_url,fulltext_format,verification_status
+2010,Global Behavior of Two Families of Nonlinear Symmetric Difference Equations,10.1155/2010/367492,Discrete Dynamics in Nature and Society,gold,https://eudml.org/doc/223423,pdf,verified_for_deep_read
+2011,An Efficient Therapy Strategy under a Novel HIV Model,10.1155/2011/828509,Discrete Dynamics in Nature and Society,gold,https://doi.org/10.1155/2011/828509,pdf,verified_for_deep_read
+2012,Propagation Behavior of Virus Codes in the Situation That Infected Computers Are Connected to the Internet with Positive Probability,10.1155/2012/693695,Discrete Dynamics in Nature and Society,gold,https://doi.org/10.1155/2012/693695,pdf,verified_for_deep_read
+2012,Towards the Epidemiological Modeling of Computer Viruses,10.1155/2012/259671,Discrete Dynamics in Nature and Society,gold,https://doi.org/10.1155/2012/259671,pdf,verified_for_deep_read
+2015,A Novel Virus-Patch Dynamic Model,10.1371/journal.pone.0137858,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0137858,pdf,verified_for_deep_read
+2015,The Impact of the Network Topology on the Viral Prevalence: A Node-Based Approach,10.1371/journal.pone.0134507,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0134507,pdf,verified_for_deep_read
+2016,Reducing the Spectral Radius of a Torus Network by Link Removal,10.1371/journal.pone.0155580,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0155580,pdf,verified_for_deep_read
+2016,The Rationality of Four Metrics of Network Robustness: A Viewpoint of Robust Growth of Generalized Meshes,10.1371/journal.pone.0161077,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0161077,pdf,verified_for_deep_read
+2017,Security Evaluation of the Cyber Networks Under Advanced Persistent Threats,10.1109/access.2017.2757944,IEEE Access,gold,https://doi.org/10.1109/access.2017.2757944,pdf,verified_for_deep_read
+2018,A dynamic discount pricing strategy for viral marketing,10.1371/journal.pone.0208738,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0208738,pdf,verified_for_deep_read
+2018,A tradeoff between the losses caused by computer viruses and the risk of the manpower shortage,10.1371/journal.pone.0191101,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0191101,pdf,verified_for_deep_read
+2018,An effective rumor-containing strategy,10.1016/j.physa.2018.02.025,Physica A: Statistical Mechanics and its Applications,green,https://arxiv.org/abs/1709.02767,pdf,verified_for_deep_read
+2019,Dynamic Discount Pricing in Competitive Marketing,10.1109/access.2019.2945884,IEEE Access,gold,https://doi.org/10.1109/access.2019.2945884,pdf,verified_for_deep_read
+2019,Energy-Efficient Patching Strategy for Wireless Sensor Networks,10.3390/s19020262,Sensors,gold,https://doi.org/10.3390/s19020262,pdf,verified_for_deep_read
+2019,Mathematical Models for Malware Propagation,10.1155/2019/6046353,Security and Communication Networks,hybrid,https://doi.org/10.1155/2019/6046353,pdf,verified_for_deep_read
+2019,Seeking Best-Balanced Patch-Injecting Strategies through Optimal Control Approach,10.1155/2019/2315627,Security and Communication Networks,hybrid,https://doi.org/10.1155/2019/2315627,pdf,verified_for_deep_read
+2020,A Low-Cost Distributed Denial-of-Service Attack Architecture,10.1109/access.2020.2977112,IEEE Access,gold,https://doi.org/10.1109/access.2020.2977112,pdf,verified_for_deep_read
+2020,Defending against Online Social Network Rumors through Optimal Control Approach,10.1155/2020/6263748,Discrete Dynamics in Nature and Society,gold,https://doi.org/10.1155/2020/6263748,pdf,verified_for_deep_read
+2020,Dynamic Maintenance Strategy for Word-of-Mouth Marketing,10.1109/access.2020.3007157,IEEE Access,gold,https://doi.org/10.1109/access.2020.3007157,pdf,verified_for_deep_read
+2020,Evaluating the Performance of a Static Patching Strategy against Computer Viruses,10.1155/2020/9408942,Complexity,gold,https://doi.org/10.1155/2020/9408942,pdf,verified_for_deep_read
+2023,A Novel Diagnosis Scheme against Collusive False Data Injection Attack,10.3390/s23135943,Sensors,gold,https://doi.org/10.3390/s23135943,pdf,verified_for_deep_read
+2023,Blockchain-based reliable image copyright protection,10.1049/blc2.12027,IET Blockchain,gold,https://doi.org/10.1049/blc2.12027,publisher_html,verified_for_deep_read
+2024,A Framework for Detecting False Data Injection Attacks in Large-Scale Wireless Sensor Networks,10.3390/s24051643,Sensors,gold,https://doi.org/10.3390/s24051643,pdf,verified_for_deep_read
+2024,Detecting Change Intervals with Isolation Distributional Kernel,10.1613/jair.1.15762,Journal of Artificial Intelligence Research,diamond,https://doi.org/10.1613/jair.1.15762,pdf,verified_for_deep_read
+2025,A Delayed Malware Propagation Model Under a Distributed Patching Mechanism: Stability Analysis,10.3390/math13142266,Mathematics,gold,https://doi.org/10.3390/math13142266,pdf,verified_for_deep_read
+2025,A Fractional Computer Virus Propagation Model with Saturation Effect,10.3390/fractalfract9090587,Fractal and Fractional,gold,https://doi.org/10.3390/fractalfract9090587,pdf,verified_for_deep_read
+2025,A Rumor-Spreading Model with Three Identical Time Delays,10.3390/math13091421,Mathematics,gold,https://doi.org/10.3390/math13091421,pdf,verified_for_deep_read
+2025,Asymptotic Stability of a Rumor Spreading Model with Three Time Delays and Two Saturation Functions,10.3390/math13122015,Mathematics,gold,https://doi.org/10.3390/math13122015,pdf,verified_for_deep_read
+2025,Monetary reward mechanism for promoting online knowledge sharing: A modeling study,10.1371/journal.pone.0320236,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0320236,pdf,verified_for_deep_read
+2025,Stability Analysis of a Rumor-Spreading Model with Two Time Delays and Saturation Effect,10.3390/math13111729,Mathematics,gold,https://doi.org/10.3390/math13111729,pdf,verified_for_deep_read
+2025,Study of the antivirus patch testing problem through optimal control modeling,10.1371/journal.pone.0319916,PLoS ONE,gold,https://doi.org/10.1371/journal.pone.0319916,pdf,verified_for_deep_read

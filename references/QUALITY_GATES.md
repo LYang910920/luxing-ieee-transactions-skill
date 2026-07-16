@@ -40,9 +40,15 @@ A failed item marked **blocking** stops claim freezing, manuscript finalization 
 ## Gate 4 — Model and theory
 
 - [ ] States, units, topology, observations, actions and constraints are defined.
+- [ ] Each state and cumulative quantity has one stable semantic meaning: stock, probability, event flow, integral, or unique entity count.
 - [ ] Flow, event and reset maps are dimensionally and logically consistent.
+- [ ] Boundary directions, conservation identities, persistent inputs and zero/upper-control cases preserve the declared feasible set.
+- [ ] Exact dynamics are separated from mean-field, independence, moment-closure, continuum or agent-level approximations.
 - [ ] Assumptions have physical/operational meaning.
 - [ ] Theorem ladder has no circular dependency.
+- [ ] Every closed-form/numerical root is substituted into the original equations, screened for feasibility and checked by residual.
+- [ ] Extra threshold/sign conditions are simplified against prior assumptions; redundant or contradictory conditions are removed.
+- [ ] Bifurcation names require branch, transversality/normal-form and stability-exchange evidence, not root counting alone.
 - [ ] Necessary versus sufficient, local versus global, continuous versus sampled and open-loop versus feedback scope is explicit.
 - [ ] Proof sketches do not skip the step that carries the headline claim.
 
@@ -79,11 +85,13 @@ Required whenever simulation, replay, emulation or a testbed is used.
 - [ ] Simulator type and canonical mechanism are declared.
 - [ ] Observation → action → event/reset → flow/integration → reward/measurement order is explicit.
 - [ ] Sampled actions, continuous-time controls and impulses are not conflated.
+- [ ] Delay histories, waiting-cohort survival/exit, impulse ordering, reset feasibility and non-Zeno behavior are explicit when applicable.
 - [ ] Random components, distributions, seeds and scenario generation are documented.
 - [ ] Equation, invariant, parser/event and special-case verification checks pass.
 - [ ] Validation target and fidelity boundary are explicit.
 - [ ] Stochastic/learning/replay studies use adequate independent repetitions or scenarios.
 - [ ] Failed, divergent and non-improving runs are retained.
+- [ ] Each figure/table records the exact model version, theorem/condition, parameters, initial state/history, seed, legend and expected endpoint.
 - [ ] Common random numbers or paired scenarios are used where they improve fairness.
 - [ ] Trace replay separates recorded exogenous events from simulated counterfactual effects and hides future labels.
 - [ ] Testbed work records environment, device/scenario/run, action success/failure, latency, overhead and recovery.
@@ -93,9 +101,13 @@ Required whenever simulation, replay, emulation or a testbed is used.
 ## Gate 8 — Algorithm, estimator and code
 
 - [ ] Every theorem assumption and data transformation is implemented, tested or named as a mismatch.
+- [ ] Objective/payoff, Hamiltonian, adjoint, stationarity condition, projection and implementation share one symbol/sign ledger.
+- [ ] State, control, adjoint, delayed and advanced-time indices match the mathematical update time exactly.
 - [ ] Projection, constraints, discretization, stopping criteria and failure handling are specified.
+- [ ] Grid, integrator, interpolation, relaxation, maximum iterations, residuals and convergence diagnostics are reported where applicable.
 - [ ] No-control, deterministic, fixed, random/rule and relevant domain baselines exist.
 - [ ] An independent solver, rollout, oracle or special case checks headline results where applicable.
+- [ ] Closed-form branches, derived coefficients and gradients have symbolic or numerical unit tests.
 - [ ] `Optimal/equilibrium/recovery` claims have independent evidence for the declared notion.
 - [ ] Seeds, resolved configs, environment, data version/hash and commit/archive identifier are recorded.
 - [ ] Figure and table generation is reproducible.
@@ -103,23 +115,32 @@ Required whenever simulation, replay, emulation or a testbed is used.
 ## Gate 9 — Experimental fairness and uncertainty
 
 - [ ] Budgets, observations, horizons, traces and tuning opportunities are matched across methods.
+- [ ] Zero/no-action and simple constant policies are included unless a documented reason makes them inapplicable.
+- [ ] Random functional controls/policies have a finite-dimensional parameterization or declared measure, plus grid/basis, distribution, smoothness/interpolation and seeds.
 - [ ] Baselines are relevant and competently tuned.
 - [ ] Ablations map to contribution claims.
 - [ ] Sensitivity/robustness covers key parameters, topology, observation and model mismatch.
+- [ ] Sensitivity curves are not called robustness without out-of-design evaluation; structural monotonicity is not presented as empirical or causal evidence.
+- [ ] Cross-size and cross-horizon objectives report per-entity/per-time or otherwise justified normalization.
+- [ ] Nested feasible sets, direct objective scaling and parameter-role coupling are identified before interpreting monotone scans.
 - [ ] Complete time/node/host/graph/capture/scenario axes are held out where required.
 - [ ] Uncertainty is reported across seeds, instances, fits or measurement windows.
 - [ ] Scalability includes size, runtime/memory and hardware context.
 - [ ] Failure cases and non-improvements are reported.
+- [ ] Probability-one language has an explicit probability space and theorem/statistical design; many successful runs alone are insufficient.
 - [ ] Every result claim points to a logged metric, figure, table or theorem.
 
 ## Gate 10 — Game and control-specific claims
 
 - [ ] FBS/PMP results are scoped as necessary conditions/configured numerical solutions unless stronger conditions are proved.
+- [ ] Terminal transversality, trajectory endpoints and numerical boundary handling agree.
+- [ ] Pointwise control caps, cumulative budgets, state/resource constraints and forced lower bounds are distinguished.
 - [ ] Feedback and open-loop policies are not compared as if they solve the identical information problem without disclosure.
 - [ ] Game claims use response matrices plus unilateral deviations or independently solved best responses.
 - [ ] Approximate stability/exploitability is scoped to the tested policy/opponent set.
 - [ ] Reward improvement is accompanied by physical/system metrics.
 - [ ] Intervention cost, running cost and impulse cost are accounted for consistently.
+- [ ] Information-gathering controls have an evidence/belief state; a memoryless instantaneous effect is not mislabeled as testing, learning or sensing.
 
 ## Gate 11 — Calibration, prediction and causal language
 
@@ -130,6 +151,7 @@ Required whenever simulation, replay, emulation or a testbed is used.
 - [ ] Residual consistency is not used as proof of parameter truth.
 - [ ] Held-out prediction/rollout and misspecification baselines are reported.
 - [ ] Counterfactual control results are not described as observed treatment effects.
+- [ ] Test-set or future-label tuning, threshold selection and preprocessing leakage are excluded and documented.
 - [ ] Operational feasibility uses Track E measurements.
 - [ ] Causal wording is supported by a prospective, randomized, quasi-experimental or otherwise defensible causal design.
 
@@ -141,6 +163,8 @@ Required whenever simulation, replay, emulation or a testbed is used.
 - [ ] Data/simulation contract is visible when material.
 - [ ] Model precedes dense derivation.
 - [ ] Results use observation → interpretation → uncertainty/claim boundary.
+- [ ] Textual curve directions, limits, equilibrium labels, experiment numbers and figure captions are checked against generated artifacts.
+- [ ] “Cumulative” is defined as an integral, event count or deduplicated entity count, with units.
 - [ ] Conclusion includes limitations and introduces no new claim.
 - [ ] Acronyms are necessary, defined and readable.
 - [ ] Sentence rhythm is varied; no cluster of 45+ word sentences.
@@ -161,6 +185,9 @@ Required whenever simulation, replay, emulation or a testbed is used.
 - [ ] `real-world validated` avoided for real-topology or trace-driven simulation.
 - [ ] `recovered parameters` avoided for unidentifiable real-data calibration.
 - [ ] `causal` matches the study design.
+- [ ] `almost surely` or probability-one language has an explicit probability contract and formal support.
+- [ ] `uniform random function/control/policy` has a finite-dimensional sampling contract or declared measure.
+- [ ] `solved successfully` is replaced or supported by sufficiency, a certified gap, or an independent solver.
 
 ## Gate 14 — Ethics, access and release
 

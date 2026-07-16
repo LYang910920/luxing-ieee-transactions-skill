@@ -134,7 +134,9 @@ CSV_HEADERS = {
         "source_or_artifact,scope,confidence,status\n"
     ),
     "planning/THEOREM_TO_CODE_MAP.csv": (
-        "item_id,theorem_or_assumption,math_location,code_location,test_or_residual,status,notes\n"
+        "item_id,theorem_or_assumption,mathematical_location,model_version,code_location,"
+        "state_or_parameter_mapping,time_index_or_event_order,test_or_residual,independent_check,"
+        "experiment_dependency,mismatch_or_failure,status,notes\n"
     ),
     "planning/EXPERIMENT_MATRIX.csv": (
         "exp_id,research_question,claim_supported,evidence_track,repository_layers,"
@@ -553,6 +555,7 @@ ASSET_TEMPLATE_TARGETS = {
     "ADAPTER_CONTRACT.yaml": "data/ADAPTER_CONTRACT.yaml",
     "CALIBRATION_VALIDATION_PLAN.md": "data/CALIBRATION_VALIDATION_PLAN.md",
     "CLAIM_EVIDENCE_MATRIX.csv": "planning/CLAIM_EVIDENCE_MATRIX.csv",
+    "CROSS_PAPER_CONSISTENCY_LEDGER.csv": "planning/CROSS_PAPER_CONSISTENCY_LEDGER.csv",
     "DATASET_CARD.yaml": "data/DATASET_CARD.yaml",
     "DATASET_DECISION_MATRIX.csv": "data/DATASET_DECISION_MATRIX.csv",
     "DATA_TO_MODEL_MAP.csv": "data/DATA_TO_MODEL_MAP.csv",

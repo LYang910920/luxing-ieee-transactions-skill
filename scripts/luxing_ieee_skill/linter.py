@@ -102,6 +102,13 @@ def _sentence_excerpt(sentence: str, limit: int = 180) -> str:
     return compact if len(compact) <= limit else compact[: limit - 1] + "…"
 
 
+def _containing_sentence(text: str, start: int, end: int) -> str:
+    left = max(text.rfind(mark, 0, start) for mark in (".", "!", "?"))
+    right_candidates = [position for mark in (".", "!", "?") if (position := text.find(mark, end)) >= 0]
+    right = min(right_candidates) + 1 if right_candidates else len(text)
+    return text[left + 1 : right]
+
+
 def lint_text(text: str, source: str | None = None) -> list[Issue]:
     issues: list[Issue] = []
     prose = clean_prose(text)
@@ -208,6 +215,121 @@ def lint_text(text: str, source: str | None = None) -> list[Issue]:
                 "A superiority claim requires matched-budget, relevant-baseline and uncertainty evidence.",
                 evidence=_sentence_excerpt(prose[max(0, match.start() - 80) : match.end() + 120]),
                 suggestion="Report matched information/resources, tuned baselines, repeated runs or instances, and uncertainty.",
+            )
+        )
+
+    probability_one_patterns = (
+        r"\balmost surely\b",
+        r"\bwith probability (?:one|1)\b",
+    )
+    probability_contract = re.compile(r"\b(?:probability space|probability measure)\b")
+    sampling_law = re.compile(
+        r"\b(?:sampling distribution|noise distribution|sampled from|random variables?|"
+        r"i\.i\.d\.|independent and identically distributed|martingale)\b"
+    )
+    linked_probability_support = re.compile(
+        r"\b(?:theorem|proposition|lemma)(?:\s+(?:\d+(?:\.\d+)*|[A-Z][A-Za-z0-9_-]*))?\b"
+        r"[^.!?]{0,180}\b(?:hence|therefore|implies?|yields?|prove[sd]?|establish(?:es|ed)?)\b"
+        r"[^.!?]{0,180}\b(?:almost surely|with probability (?:one|1))\b|"
+        r"\b(?:almost surely|with probability (?:one|1))\b[^.!?]{0,120}\b(?:by|under|from)\b"
+        r"[^.!?]{0,80}\b(?:theorem|proposition|lemma)\b"
+    )
+    for pattern in probability_one_patterns:
+        for match in re.finditer(pattern, lowered):
+            context = lowered[max(0, match.start() - 700) : match.end() + 700]
+            claim_sentence = _containing_sentence(lowered, match.start(), match.end())
+            if (
+                probability_contract.search(context)
+                and sampling_law.search(context)
+                and linked_probability_support.search(claim_sentence)
+            ):
+                continue
+            issues.append(
+                Issue(
+                    "major",
+                    "CLAIM_GATE_ALMOST_SURE",
+                    "A probability-one claim appears without a nearby probability space, sampling law, or formal result.",
+                    evidence=_sentence_excerpt(prose[max(0, match.start() - 80) : match.end() + 140]),
+                    suggestion=(
+                        "Define the probability space and distribution and provide a theorem or statistical design; "
+                        "otherwise scope the statement to the tested instances."
+                    ),
+                )
+            )
+
+    uniform_sampling_pattern = re.compile(
+        r"\b(?:randomly and uniformly|uniformly random(?:ly)?|uniformly sampled)\b"
+    )
+    functional_object_pattern = re.compile(
+        r"\b(?:control|controls|policy|policies|strategy|strategies|function|functions|trajectory|trajectories)\b"
+    )
+    functional_representation_pattern = re.compile(
+        r"\b(?:basis functions?|coefficients?|finite-dimensional|knot points?|grid values?)\b"
+    )
+    finite_resolution_pattern = re.compile(
+        r"\b(?:\d+[- ]?(?:point|dimensional)|dimension(?:\s+of)?\s+\d+|"
+        r"(?:time )?grid\s+(?:with|of)\s+\d+\s+(?:points?|values?))\b"
+    )
+    reconstruction_pattern = re.compile(
+        r"\b(?:piecewise[- ]constant|piecewise[- ]linear|linear interpolation|"
+        r"spline interpolation|smoothness rule)\b"
+    )
+    seed_pattern = re.compile(r"\b(?:random seed|seeds?)\b(?:\s*(?:=|:)?\s*\d+)?")
+    for match in uniform_sampling_pattern.finditer(lowered):
+        context = _containing_sentence(lowered, match.start(), match.end())
+        has_contract = all(
+            pattern.search(context)
+            for pattern in (
+                functional_representation_pattern,
+                finite_resolution_pattern,
+                reconstruction_pattern,
+                seed_pattern,
+            )
+        )
+        if not functional_object_pattern.search(context) or has_contract:
+            continue
+        issues.append(
+            Issue(
+                "major",
+                "BASELINE_RANDOM_FUNCTION_UNDEFINED",
+                "A uniform random functional baseline lacks a nearby finite-dimensional sampling contract.",
+                evidence=_sentence_excerpt(prose[max(0, match.start() - 80) : match.end() + 160]),
+                suggestion=(
+                    "Specify the time grid or basis, dimension, coefficient distribution, interpolation or smoothness, "
+                    "and random seeds before using the baseline."
+                ),
+            )
+        )
+
+    solved_successfully_pattern = re.compile(
+        r"(?:\b(?:solve[sd]?|resolve[sd]?)\b[^.!?]{0,100}\bsuccessfully\b|"
+        r"\bsuccessfully\b[^.!?]{0,100}\b(?:solve[sd]?|resolve[sd]?)\b)"
+    )
+    solution_certificate_pattern = re.compile(
+        r"\b(?:certified optimality gap|verification theorem|global optimality theorem)\b|"
+        r"\bsufficient conditions?\b[^.!?]{0,100}\b(?:hold|satisf|prove|establish|theorem)\w*\b|"
+        r"\b(?:independent solver|direct collocation|direct transcription|exhaustive search)\b"
+        r"[^.!?]{0,140}\b(?:agree|match|confirm|verify|certif|residual|gap|within)\w*\b"
+    )
+    for match in solved_successfully_pattern.finditer(lowered):
+        after = lowered[match.end() : match.end() + 360].split(".", 1)[0]
+        before = lowered[max(0, match.start() - 260) : match.start()].rsplit(".", 1)[-1]
+        linked_prior_certificate = re.compile(
+            r"\b(?:as|independently)\s+(?:verified|confirmed|matched)\s+by\b[^.!?]{0,160}|"
+            r"\b(?:because|since)\b[^.!?]{0,120}\bsufficient conditions?\b[^.!?]{0,80}\b(?:hold|satisf)\w*\b"
+        )
+        if solution_certificate_pattern.search(after) or linked_prior_certificate.search(before):
+            continue
+        issues.append(
+            Issue(
+                "major",
+                "CLAIM_GATE_SOLVED_SUCCESSFULLY",
+                "A solved-successfully claim lacks a nearby sufficiency, optimality-gap, or independent-solver certificate.",
+                evidence=_sentence_excerpt(prose[max(0, match.start() - 80) : match.end() + 160]),
+                suggestion=(
+                    "Describe the output as a necessary-condition, stationary, configured numerical, or among-tested "
+                    "solution unless stronger evidence is available."
+                ),
             )
         )
 

@@ -4,7 +4,7 @@
 
 Produce a reproducible, role-aware and time-aware profile of Lu-Xing Yang's IEEE Transactions research writing without redistributing article text or over-attributing collaborator prose.
 
-Version 0.3.1 starts from a strong local fallback: 42 owner-provided key-paper full texts, 20 first/corresponding-author core-voice papers and 17 IEEE Transactions papers. All 17 owner-priority selected Transactions rows have private full text; one different-subfield row is owner-deprioritized. This is substantial calibration evidence, but it is not automatically the complete publication universe.
+Version 0.4.0 starts from an expanded verified-full-text working corpus: 42 owner-provided papers plus 31 nonduplicate open-access journal articles, for 73 paper-by-paper deep readings. The local subset contains 20 first/corresponding-author core-voice papers and 17 IEEE Transactions papers. All 17 owner-priority selected Transactions rows have private full text; one different-subfield row is owner-deprioritized. This is substantial research-doctrine calibration evidence, but it is not automatically the complete publication universe or sentence-level voice evidence.
 
 ## 1. Establish the publication universe
 
@@ -158,10 +158,12 @@ For every profile field assign high, moderate or low confidence. Report:
 - duplicate/version decisions;
 - likely collaborator/editor effects.
 
-The current v0.3.1 baseline should be reproducible as:
+The current v0.4.0 baseline should be reproducible as:
 
 ```text
 42 owner-provided readable full texts
+31 nonduplicate open-access full texts verified to PDF or complete publisher HTML
+73 paper-by-paper deep-reading notes with final evidence/lint gates
 20 first/corresponding core-voice papers
 17 IEEE Transactions full texts
 17/18 selected Transactions rows covered by private full text
@@ -186,4 +188,4 @@ full-corpus-calibrated
   role uncertainty documented and quality gates passed
 ```
 
-`full-corpus-calibrated` requires the quantitative and provenance criteria in `WORK_MASTER_PROMPT.md`. A large local corpus alone is not sufficient if the publication universe and missing papers have not been reconciled.
+`full-corpus-calibrated` requires the quantitative and provenance criteria in this protocol. A large or deeply read working corpus alone is not sufficient if the publication universe, missing papers, duplicates, versions, and role evidence have not been reconciled.

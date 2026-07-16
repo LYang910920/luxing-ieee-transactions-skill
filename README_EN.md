@@ -89,13 +89,14 @@ These capabilities are added only when the research question and available data 
 
 ## Quick Installation
 
-This repository is currently private, so authenticate with GitHub CLI first:
+This is a public repository. For a fresh installation, clone it directly into the Codex skills directory:
 
 ```bash
-gh auth login
-gh repo clone LYang910920/luxing-ieee-transactions-skill \
+git clone https://github.com/LYang910920/luxing-ieee-transactions-skill.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/luxing-ieee-transactions"
 ```
+
+If that directory already exists, use `git pull --ff-only` only when it is a Git worktree with no local changes you need to preserve. Otherwise back up the old directory before reinstalling so personal edits are not silently overwritten.
 
 After installation, invoke the skill in natural language, for example:
 
@@ -109,18 +110,19 @@ Design an IEEE Transactions structure and experiment plan for this Stackelberg d
 
 ## Evidence Basis and Boundaries
 
-The current version is `v0.3.1`, with status `attachment-key-corpus-calibrated`:
+The current version is `v0.4.0`, with status `expanded-partial-calibration`:
 
-- 42 owner-provided full texts from a key-paper corpus were analyzed locally to produce derived metrics and paraphrased paper cards;
-- 20 papers with first- or corresponding-author signals form a higher-weight core-voice subset;
+- 73 verified full texts were deep-read paper by paper: 42 owner-provided papers plus 31 nonduplicate open-access journal articles;
+- The expanded 73-paper set informs research architecture, mathematical and algorithmic correction gates, experiment consistency, and claim boundaries;
+- Sentence-level personal-style metrics remain anchored to the role-weighted 42-paper local corpus, including a 20-paper first/corresponding-author core-voice subset;
 - 17 IEEE Transactions full texts informed venue structure and research architecture;
 - All 17 owner-priority Transactions records currently have private full text;
 - One paper from a different technical subfield is explicitly owner-deprioritized.
 
 > [!NOTE]
-> These figures describe a key-paper corpus, not a verified complete publication universe. Coauthorship does not automatically establish personal sentence-level authorship; papers without verified writing roles mainly inform research architecture, method combinations, and experimental design.
+> The 73 papers form a verified-full-text deep-reading working corpus, not a proven complete publication universe. Open access and coauthorship do not automatically establish personal sentence-level authorship; papers without verified writing roles mainly inform research architecture, correction rules, method combinations, and experimental design.
 
-The repository retains only bibliographic metadata, hashes, derived metrics, and paraphrased paper cards. It **does not contain article PDFs, extracted article text, copied figures, tables, or equations, Deakin downloads, or other restricted source materials**.
+The repository retains only bibliographic metadata, aggregate counts, hashes, stable derived rules, derived metrics, and paraphrased paper cards. It **does not contain article PDFs, per-paper deep-reading notes, extracted article text, copied figures, tables, or equations, Deakin downloads, or other restricted source materials**.
 
 ## Evidence Tracks
 
@@ -141,6 +143,8 @@ Observed topology with synthetic spreading is only `real-topology simulation`; i
 - [`references/PERSONAL_STYLE_PROFILE.md`](references/PERSONAL_STYLE_PROFILE.md): Personal writing and argumentation profile.
 - [`references/RESEARCH_PIPELINE.md`](references/RESEARCH_PIPELINE.md): End-to-end research workflow.
 - [`references/QUALITY_GATES.md`](references/QUALITY_GATES.md): Theory, algorithm, evidence, and claim gates.
+- [`references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md`](references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md): Mechanism, theorem, solver, experiment, and claim-consistency doctrine derived from the 73 full-text readings.
+- [`references/corpus/open_access_fulltext_manifest.csv`](references/corpus/open_access_fulltext_manifest.csv): Public bibliographic boundary for the 31-paper open-access expansion.
 - [`references/THIRD_PARTY_NOTICES.md`](references/THIRD_PARTY_NOTICES.md): Copyright, paper, and third-party material boundaries.
 - [`assets/templates/`](assets/templates/): Project, evidence, data, topology, and manuscript templates.
 - [`scripts/luxing_ieee.py`](scripts/luxing_ieee.py): Validation, preflight, scaffolding, and evidence-recommendation tools.

@@ -40,7 +40,7 @@ Read only the resources needed for the current task.
 | Personal style, outline, drafting, or revision | `references/PERSONAL_STYLE_PROFILE.md`, `references/RHETORICAL_MOVE_MAP.md`, `references/SECTION_PLAYBOOKS.md` | section plan or evidence-bounded prose |
 | Target-journal fit | `references/JOURNAL_OVERLAYS.md`, `references/IEEE_TRANSACTIONS_COMMON.yaml` | venue-specific framing and a dated official-rule check |
 | Novelty or literature audit | `references/FULL_CORPUS_AUDIT_PROTOCOL.md`, `references/PUBLICATION_ENTRY_POINTS.md` | search log, closest-work matrix, negative evidence, must-cite list |
-| Theorem, optimal control, or game claim | `references/QUALITY_GATES.md`, `references/CLAIM_LANGUAGE_RULES.yaml` | assumption ladder, proof/code map, residual or deviation checks |
+| Theorem, optimal control, game, delay, impulse, or cross-paper consistency claim | `references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md`, `references/QUALITY_GATES.md`, `references/CLAIM_LANGUAGE_RULES.yaml` | mechanism ledger, assumption ladder, proof/code map, residual or deviation checks |
 | Topology or no-real-data experiment | `references/EVIDENCE_LADDER_NO_REAL_DATA.md`, `references/TOPOLOGY_FIRST_EXPERIMENT_PROTOCOL.md` | T1–T5 decision, topology card, scenario matrix, claim boundary |
 | Real data, traces, calibration, or simulation | `references/REAL_DATA_AND_SIMULATION_PROTOCOL.md`, `references/SIMULATION_VALIDATION.md` | dataset/adapter/split/reality contracts and validation plan |
 | RL/MARL or physics-informed extension | `references/PERSONAL_RESEARCH_DIRECTIONS.md`, `references/THREE_REPOSITORY_INTEGRATION.md` | justified layer selection and canonical-model bridge |
@@ -139,7 +139,22 @@ Use these as soft targets, never as content requirements:
 
 Use phrases from `references/PHRASEBANK.md` functionally, not mechanically. Avoid repeated connectors, forced acronyms, vague utility endings, grammar defects, and unsupported promotional adjectives. Personal style never overrides clearer IEEE English.
 
-The current profile is `attachment-key-corpus-calibrated`: 42 owner-provided key-paper full texts informed derived metrics, with 20 core-voice papers and 17 IEEE Transactions papers. All 17 owner-priority rows in the selected Transactions set have private full text; one different-subfield row is explicitly owner-deprioritized. This is not a verified complete-publication corpus. Keep both boundaries visible whenever style provenance matters.
+The current profile is `expanded-partial-calibration`. A verified 73-paper full-text corpus—42 owner-provided papers plus 31 nonduplicate open-access journal articles—now informs research architecture and quality doctrine. Sentence-level style metrics remain anchored to the role-weighted 42-paper local corpus, including 20 core-voice papers and 17 IEEE Transactions papers. This is not a verified complete-publication corpus, and coauthorship does not prove sentence-level authorship. Keep all of these boundaries visible whenever provenance matters.
+
+## Apply the full-text consistency doctrine
+
+Read `references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md` before accepting a central model, theorem, control, game, solver, or experiment claim. At minimum:
+
+1. freeze the mechanism, state, unit, timing, information, and reality contracts;
+2. distinguish exact equations from closures and persistent-input systems from boundary equilibria;
+3. substitute equilibria/roots into the original model and independently check residuals, feasibility, theorem dependencies, and allowed branches;
+4. audit delay histories/cohort survival, fractional memory, or impulse reset order when those mechanisms appear;
+5. trace the objective through Hamiltonian, adjoint, stationarity/projection, discretization, and reported metric;
+6. require solver settings, stopping residuals, refinement or independent checks, and formula-to-axis/sample-count agreement;
+7. define random policies and probability spaces, prevent test/future leakage, match baseline budgets/information, and retain failures;
+8. register every experiment's model version, parameters, initial history, topology/data split, solver, seeds, figure/table, and allowed conclusion.
+
+Use `assets/templates/CROSS_PAPER_CONSISTENCY_LEDGER.csv` when multiple papers, variants, supplements, or implementations share a claim. Stop or narrow the work when a state leaves its feasible region, an equilibrium fails substitution, a necessary condition is advertised as a global solution, code does not evaluate theorem conditions, or reported axes/counts/semantics contradict the declared model.
 
 ## Match claims to evidence
 
@@ -170,7 +185,11 @@ Gate strong terms using `references/CLAIM_LANGUAGE_RULES.yaml`. In particular:
 - require a defined solution concept and independent deviations or best responses for `equilibrium`;
 - require matched budgets, information, tuning, repetitions, and uncertainty for `outperform`;
 - require declared shifts and failures for `robust`, size/resource sweeps for `scalable`, and operational mapping for `practical`;
+- require a probability space and formal support for `almost surely`, and a finite-dimensional sampling contract or declared measure for random functional policies;
+- replace `solved successfully` when only necessary conditions or one converged run exist; require sufficiency, a certified gap, or an independent solver for the stronger wording;
 - require an appropriate prospective or causal design for causal language.
+
+Treat static linter findings as conservative screening, not as certificates. A line that escapes a regex still requires the complete theorem, solver, probability, sampling, baseline, and evidence contract in the claim ledger.
 
 ## Use the bundled utilities
 

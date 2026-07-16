@@ -18,29 +18,46 @@ ROOT = Path(__file__).resolve().parents[1]
 NAME = "luxing-ieee-transactions"
 
 REQUIRED = (
+    ".gitignore",
     "SKILL.md",
     "agents/openai.yaml",
     "references/PERSONAL_RESEARCH_DIRECTIONS.md",
     "references/PERSONAL_STYLE_PROFILE.md",
     "references/PERSONAL_STYLE_PROFILE.yaml",
+    "references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md",
     "references/QUALITY_GATES.md",
+    "references/CLAIM_LANGUAGE_RULES.yaml",
     "references/EVIDENCE_TRACKS.md",
     "references/TOPOLOGY_FIRST_EXPERIMENT_PROTOCOL.md",
     "references/RESEARCH_PIPELINE.md",
     "references/corpus/publication_manifest.csv",
     "references/corpus/local_attachment_manifest.csv",
     "references/corpus/local_corpus_metrics.json",
+    "references/corpus/open_access_fulltext_manifest.csv",
+    "references/corpus/expanded_fulltext_corpus_summary.json",
     "references/repo-family/repository_manifest.yaml",
     "assets/templates/PROJECT_CONFIG.yaml",
     "assets/templates/EVIDENCE_PLAN.json",
     "assets/templates/TOPOLOGY_CARD.yaml",
+    "assets/templates/CROSS_PAPER_CONSISTENCY_LEDGER.csv",
     "scripts/luxing_ieee.py",
     "scripts/luxing_ieee_skill/cli.py",
+    "tests/test_linter.py",
 )
 
 FORBIDDEN_SUFFIXES = {
     ".pdf", ".doc", ".docx", ".ppt", ".pptx", ".key", ".pages",
     ".pcap", ".pcapng", ".ckpt", ".pt", ".pth", ".zip", ".pyc",
+}
+
+FORBIDDEN_PARTS = {
+    "private",
+    "raw",
+    "checkpoints",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
 }
 
 
@@ -121,16 +138,19 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
             errors.append(f"Invalid project manifest: {exc}")
         else:
             details["version"] = manifest.get("version")
-            if manifest.get("version") != "0.3.1":
-                errors.append("Project manifest version must be 0.3.1.")
-            if manifest.get("status") != "attachment-key-corpus-calibrated":
-                errors.append("Project manifest must preserve attachment-key-corpus-calibrated status.")
+            if manifest.get("version") != "0.4.0":
+                errors.append("Project manifest version must be 0.4.0.")
+            if manifest.get("status") != "expanded-partial-calibration":
+                errors.append("Project manifest must use expanded-partial-calibration status.")
             if manifest.get("full_corpus_claim") is not False:
                 errors.append("Project manifest must not claim full-corpus completion.")
             if manifest.get("copyrighted_full_text_included") is not False:
                 errors.append("Project manifest must declare copyrighted full text excluded.")
             manifest_counts = {
                 "owner_provided_fulltext_papers": 42,
+                "verified_open_access_fulltext_papers": 31,
+                "expanded_verified_fulltext_papers": 73,
+                "deep_read_notes_completed": 73,
                 "attachment_ieee_transactions_papers": 17,
                 "selected_transactions_attachment_covered": 17,
                 "owner_priority_transactions_rows": 17,
@@ -140,6 +160,70 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
             for key, value in manifest_counts.items():
                 if manifest.get(key) != value:
                     errors.append(f"Project manifest {key} must be {value}; found {manifest.get(key)!r}.")
+            if manifest.get("sentence_style_source_status") != "attachment-key-corpus-calibrated":
+                errors.append("Sentence-style metrics must retain the attachment corpus source boundary.")
+            for key in (
+                "local_attachment_manifest",
+                "local_corpus_metrics",
+                "open_access_fulltext_manifest",
+                "expanded_fulltext_corpus_summary",
+                "fulltext_corpus_derived_doctrine",
+            ):
+                relative = manifest.get(key)
+                if not isinstance(relative, str) or not (root / "references" / relative).is_file():
+                    errors.append(f"Project manifest path is missing or invalid for {key}: {relative!r}.")
+
+    oa_dois: list[str] = []
+    oa_titles: list[str] = []
+    oa_path = root / "references/corpus/open_access_fulltext_manifest.csv"
+    if oa_path.is_file():
+        with oa_path.open(newline="", encoding="utf-8") as handle:
+            oa_rows = list(csv.DictReader(handle))
+        details["open_access_rows"] = len(oa_rows)
+        oa_dois = [(row.get("doi") or "").strip().lower() for row in oa_rows]
+        oa_titles = [
+            re.sub(r"[^a-z0-9]+", " ", (row.get("title") or "").lower()).strip()
+            for row in oa_rows
+        ]
+        if len(oa_rows) != 31:
+            errors.append(f"Expected 31 open-access corpus rows; found {len(oa_rows)}.")
+        if any(not doi for doi in oa_dois) or len(set(oa_dois)) != len(oa_dois):
+            errors.append("Open-access corpus has missing or duplicate DOI values.")
+        forbidden_columns = {"fulltext_url", "local_source_path", "source_filename", "extracted_text"}
+        if oa_rows and forbidden_columns.intersection(oa_rows[0]):
+            errors.append("Open-access manifest exposes private/download-specific columns.")
+        for row in oa_rows:
+            if row.get("verification_status") != "verified_for_deep_read":
+                errors.append(f"Open-access row is not verified for deep read: {row.get('doi')}")
+            if row.get("fulltext_format") not in {"pdf", "publisher_html"}:
+                errors.append(f"Unsupported open-access full-text format: {row.get('doi')}")
+            if not (row.get("landing_page_url") or "").startswith("https://"):
+                errors.append(f"Open-access landing page must use HTTPS: {row.get('doi')}")
+
+    expanded_summary_path = root / "references/corpus/expanded_fulltext_corpus_summary.json"
+    if expanded_summary_path.is_file():
+        try:
+            expanded = json.loads(expanded_summary_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"Invalid expanded corpus summary: {exc}")
+        else:
+            details["expanded_corpus_status"] = expanded.get("status")
+            expected_counts = {
+                "owner_provided_fulltexts": 42,
+                "verified_open_access_fulltexts": 31,
+                "verified_fulltexts_total": 73,
+                "deep_read_notes_completed": 73,
+            }
+            counts = expanded.get("counts", {})
+            for key, value in expected_counts.items():
+                if counts.get(key) != value:
+                    errors.append(f"Expanded corpus summary {key} must be {value}; found {counts.get(key)!r}.")
+            if expanded.get("status") != "expanded-partial-calibration":
+                errors.append("Expanded corpus summary has an unsupported status.")
+            if expanded.get("complete_publication_universe") is not False:
+                errors.append("Expanded corpus summary must not claim a complete publication universe.")
+            if expanded.get("article_fulltext_or_notes_included") is not False:
+                errors.append("Expanded corpus summary must declare article full text and notes excluded.")
 
     corpus_path = root / "references/corpus/local_attachment_manifest.csv"
     if corpus_path.is_file():
@@ -147,6 +231,11 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
             rows = list(csv.DictReader(handle))
         ids = [row.get("paper_id", "") for row in rows]
         hashes = [row.get("sha256", "") for row in rows]
+        local_dois = [(row.get("doi") or "").strip().lower() for row in rows]
+        local_titles = [
+            re.sub(r"[^a-z0-9]+", " ", (row.get("title") or "").lower()).strip()
+            for row in rows
+        ]
         details["corpus_rows"] = len(rows)
         if len(rows) != 42:
             errors.append(f"Expected 42 attachment-corpus rows; found {len(rows)}.")
@@ -154,6 +243,12 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
             errors.append("Attachment corpus has missing or duplicate paper IDs.")
         if len(set(hashes)) != len(hashes) or any(not re.fullmatch(r"[0-9a-f]{64}", value) for value in hashes):
             errors.append("Attachment corpus has missing, duplicate, or invalid SHA-256 values.")
+        doi_overlap = sorted(set(local_dois).intersection(oa_dois) - {""})
+        title_overlap = sorted(set(local_titles).intersection(oa_titles) - {""})
+        if doi_overlap or title_overlap:
+            errors.append(
+                f"Local and open-access expansion are not disjoint: doi={doi_overlap}, title={title_overlap}."
+            )
         for row in rows:
             signals: list[float] = []
             if row.get("author_position") == "1":
@@ -268,7 +363,7 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
         relative = path.relative_to(root)
         if path.suffix.lower() in FORBIDDEN_SUFFIXES:
             errors.append(f"Forbidden release file type: {relative}")
-        if any(part in {"private", "raw", "checkpoints", "__pycache__"} for part in relative.parts):
+        if any(part in FORBIDDEN_PARTS for part in relative.parts):
             errors.append(f"Private, raw, cache, or checkpoint path is not allowed: {relative}")
     details["files"] = file_count
     details["bytes"] = total_bytes
@@ -315,6 +410,8 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
                     "evidence/EVIDENCE_PLAN.json",
                     "topology/TOPOLOGY_CARD.yaml",
                     "simulation/SYNTHETIC_SCENARIO_SPEC.yaml",
+                    "planning/CROSS_PAPER_CONSISTENCY_LEDGER.csv",
+                    "planning/THEOREM_TO_CODE_MAP.csv",
                     "manuscript/main.tex",
                 )
                 if not all((project / item).is_file() for item in scaffold_files):
@@ -323,6 +420,14 @@ def validate(root: Path = ROOT, run_smoke: bool = True) -> tuple[list[str], list
                 canonical_dataset_card = (root / "assets/templates/DATASET_CARD.yaml").read_text(encoding="utf-8")
                 if generated_dataset_card != canonical_dataset_card:
                     errors.append("Project scaffold does not consume the canonical dataset-card template.")
+                for relative, canonical_name in (
+                    ("planning/CROSS_PAPER_CONSISTENCY_LEDGER.csv", "CROSS_PAPER_CONSISTENCY_LEDGER.csv"),
+                    ("planning/THEOREM_TO_CODE_MAP.csv", "THEOREM_TO_CODE_MAP.csv"),
+                ):
+                    generated = (project / relative).read_text(encoding="utf-8")
+                    canonical = (root / "assets/templates" / canonical_name).read_text(encoding="utf-8")
+                    if generated != canonical:
+                        errors.append(f"Project scaffold does not consume canonical {canonical_name}.")
                 generated_config = (project / "PROJECT_CONFIG.yaml").read_text(encoding="utf-8")
                 if "project_name: Validation Paper" not in generated_config or "target_journal: TIFS" not in generated_config:
                     errors.append("Project scaffold did not render the project name and journal into the canonical config.")

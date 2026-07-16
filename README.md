@@ -89,13 +89,14 @@ operational problem
 
 ## 快速安装
 
-该仓库目前为私有仓库，需要先完成 GitHub CLI 登录：
+该仓库为公开仓库。全新安装可直接克隆到 Codex 技能目录：
 
 ```bash
-gh auth login
-gh repo clone LYang910920/luxing-ieee-transactions-skill \
+git clone https://github.com/LYang910920/luxing-ieee-transactions-skill.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/luxing-ieee-transactions"
 ```
+
+若该目录已经存在：仅当它是 Git 工作树且没有需要保留的本地修改时才执行 `git pull --ff-only`；否则先备份旧目录再重新安装，避免静默覆盖个人修改。
 
 安装后可以用自然语言触发，例如：
 
@@ -109,18 +110,19 @@ gh repo clone LYang910920/luxing-ieee-transactions-skill \
 
 ## 证据基础与边界
 
-当前版本为 `v0.3.1`，状态为 `attachment-key-corpus-calibrated`：
+当前版本为 `v0.4.0`，状态为 `expanded-partial-calibration`：
 
-- 42 篇作者提供的关键论文全文用于本地派生分析；
-- 20 篇 first/corresponding-author 核心语料用于较强的个人文风信号；
+- 已逐篇深读 73 篇经过全文核验的论文：42 篇作者提供全文 + 31 篇非重复开放获取期刊论文；
+- 扩展后的 73 篇语料用于研究架构、数学/算法纠错门、实验一致性和主张边界；
+- 句子级个人文风指标仍以角色加权的 42 篇本地语料为基础，其中 20 篇 first/corresponding-author 论文构成核心文风子集；
 - 17 篇 IEEE Transactions 全文用于期刊结构与研究架构校准；
 - 当前 17 篇优先 Transactions 论文均有私有全文；
 - 1 篇不同技术子领域论文由作者明确标为非优先。
 
 > [!NOTE]
-> 这些数字描述的是关键论文语料，不代表已核验完整发表全集。共同作者论文也不自动等于个人逐句写作风格；无明确写作角色的论文主要用于研究架构、方法组合和实验设计。
+> 73 篇是“已核验全文并完成深读的工作语料”，不是已证明完整的发表全集。开放获取扩展和共同作者论文也不自动等于个人逐句写作风格；无明确写作角色的论文主要用于研究架构、纠错规则、方法组合和实验设计。
 
-仓库只保留书目信息、哈希、派生指标和改写后的 paper cards，**不包含论文 PDF、抽取正文、图表、公式原文、Deakin 下载文件或其他受限材料**。
+仓库只保留书目信息、聚合数量、哈希、稳定派生规则、派生指标和改写后的 paper cards，**不包含论文 PDF、逐篇深读笔记、抽取正文、图表、公式原文、Deakin 下载文件或其他受限材料**。
 
 ## 证据轨道
 
@@ -141,6 +143,8 @@ gh repo clone LYang910920/luxing-ieee-transactions-skill \
 - [`references/PERSONAL_STYLE_PROFILE.md`](references/PERSONAL_STYLE_PROFILE.md)：个人写作和论证结构。
 - [`references/RESEARCH_PIPELINE.md`](references/RESEARCH_PIPELINE.md)：端到端研究流程。
 - [`references/QUALITY_GATES.md`](references/QUALITY_GATES.md)：理论、算法、证据与主张门槛。
+- [`references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md`](references/FULLTEXT_CORPUS_DERIVED_DOCTRINE.md)：73 篇全文深读派生的机制、定理、求解器、实验与主张一致性规范。
+- [`references/corpus/open_access_fulltext_manifest.csv`](references/corpus/open_access_fulltext_manifest.csv)：31 篇开放获取扩展的公开书目边界。
 - [`references/THIRD_PARTY_NOTICES.md`](references/THIRD_PARTY_NOTICES.md)：版权、论文和第三方材料边界。
 - [`assets/templates/`](assets/templates/)：项目、证据、数据、拓扑和论文模板。
 - [`scripts/luxing_ieee.py`](scripts/luxing_ieee.py)：校验、预检、脚手架和证据推荐工具。

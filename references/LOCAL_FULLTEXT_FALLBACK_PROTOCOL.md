@@ -39,7 +39,7 @@ Tracked outputs may include only:
 
 ## Attachment verification
 
-The v0.3.1 release includes `corpus/local_attachment_manifest.csv`. WORK should:
+The v0.4.0 release preserves `corpus/local_attachment_manifest.csv` as the sentence-style source manifest. WORK should:
 
 1. place the 42 owner PDFs in the private directory;
 2. run `python -m luxing_ieee_skill verify-local-corpus corpus/private/local_fulltext`;
@@ -80,6 +80,7 @@ Follow `DEAKIN_ACCESS_POLICY.md`. Do not inspect cookies, tokens, passwords, loc
 Allowed:
 
 - `attachment-key-corpus-calibrated`;
+- `expanded-partial-calibration` when the separate 31-paper open-access manifest and 73-note inventory audit pass;
 - `42 owner-provided full texts analyzed`;
 - `17/18 selected Transactions rows covered by private full text`;
 - `17/17 owner-priority selected Transactions rows covered; one row owner-deprioritized`.

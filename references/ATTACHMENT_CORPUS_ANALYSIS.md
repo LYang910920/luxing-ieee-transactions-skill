@@ -2,7 +2,7 @@
 
 ## Status and purpose
 
-Version 0.3.1 uses the owner-provided `LYANG PAPER.zip` plus two separately supplied papers as a local full-text fallback corpus. The private input now contains **42 readable article PDFs covering 2012–2026**. All 42 yielded usable text without OCR. The release package contains only derived metadata, counts, paper cards, and checksums; it does **not** contain the PDFs, extracted article text, figures, tables, equations, or long quotations.
+The local sentence-style component uses the owner-provided `LYANG PAPER.zip` plus two separately supplied papers as a full-text fallback corpus. The private input contains **42 readable article PDFs covering 2012–2026**. All 42 yielded usable text without OCR. Version 0.4.0 keeps these local metrics stable while adding a separate 31-paper open-access research-doctrine expansion. The release package contains only derived metadata, counts, paper cards, and checksums; it does **not** contain PDFs, extracted article text, figures, tables, equations, or long quotations.
 
 The two additions have different provenance. The 2023 TIFS APT paper is a licensed IEEE publisher Version of Record. The 2026 TDSC-matched employee-compliance paper is an author-generated IEEE-class manuscript without publisher metadata, final pagination, DOI, or included appendices. Both are retained as Tier C research-architecture evidence because the owner is third author and no personal writing-role evidence was found.
 

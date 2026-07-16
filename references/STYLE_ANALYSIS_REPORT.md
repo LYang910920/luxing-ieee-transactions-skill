@@ -2,7 +2,7 @@
 
 ## Decision
 
-The style profile is now **attachment-key-corpus-calibrated**. Forty-two owner-provided full-text papers were analyzed, including 17 IEEE Transactions papers and a 20-paper first/corresponding-author core-voice subset. The two v0.3.1 additions are Tier C research-architecture records and therefore do not alter the personal-voice core.
+The overall profile is now **expanded-partial-calibration**. Sentence-level style remains calibrated from 42 owner-provided full-text papers, including 17 IEEE Transactions papers and a 20-paper first/corresponding-author core-voice subset. A separate 31-paper open-access expansion brings the research-doctrine corpus to 73 full-text deep readings; it strengthens architecture and correction rules without altering the personal-voice core or local sentence metrics.
 
 It is not yet a complete-publication-corpus claim. All 17 owner-priority selected Transactions rows now have private full text; the only uncovered row is an explicitly owner-deprioritized different-subfield paper. The broader publication universe, authorship roles, and version conflicts still require reconciliation.
 

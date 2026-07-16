@@ -90,3 +90,37 @@ claims:
       - prospective_randomized_quasi_experimental_or_other_defensible_design
       - explicit_counterfactual_strategy
       - assumptions_and_sensitivity
+  almost_sure:
+    severity: blocking_without_probability_contract
+    required:
+      - explicit_probability_space
+      - sampling_or_noise_distribution
+      - theorem_or_statistical_design_supporting_probability_one
+    forbidden_shortcut: many_successful_simulation_runs_do_not_imply_almost_sure
+  uniform_random_function:
+    severity: blocking_if_sampling_contract_is_undefined
+    required:
+      - finite_dimensional_parameterization_or_declared_measure
+      - time_grid_or_basis
+      - coefficient_distribution
+      - interpolation_or_smoothness_rule
+      - random_seeds
+  solved_successfully:
+    severity: blocking_if_only_necessary_conditions_or_one_fixed_point_exist
+    required_any:
+      - sufficient_conditions
+      - certified_optimality_gap
+      - independent_solver_agreement
+      - exhaustive_or_global_certificate
+    safer_alternatives:
+      - satisfies_the_declared_necessary_conditions
+      - configured_numerical_solution
+      - best_among_the_tested_policies
+
+linter_boundary:
+  role: conservative_heuristic_screening_only
+  warning: keyword_proximity_is_not_a_mathematical_or_empirical_certificate
+  required_follow_up:
+    - apply_the_full_claim_contract_above
+    - inspect_the_underlying_theorem_solver_sampling_or_probability_artifact
+    - record_human_or_independent_verification_in_the_claim_ledger
