@@ -1,5 +1,7 @@
 # Lu-Xing Yang IEEE Transactions Research Skill
 
+**语言：简体中文 | [English](README_EN.md)**
+
 一个面向 IEEE Transactions 研究全流程的 Codex SKILL，固化了 **Lu-Xing Yang 的个人研究方向、论证结构、写作偏好与证据门槛**。
 
 > [!IMPORTANT]
