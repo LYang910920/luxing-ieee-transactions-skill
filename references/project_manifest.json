@@ -1,0 +1,52 @@
+{
+  "name": "luxing-ieee-transactions-skill",
+  "version": "0.3.1",
+  "release_date": "2026-07-16",
+  "status": "attachment-key-corpus-calibrated",
+  "owner": "Lu-Xing Yang",
+  "orcid": "0000-0002-9229-5787",
+  "target_venues": [
+    "TIFS",
+    "TDSC",
+    "TSMC",
+    "TNSE",
+    "TCSS"
+  ],
+  "selected_transactions_manifest_rows": 18,
+  "full_corpus_claim": false,
+  "copyrighted_full_text_included": false,
+  "three_repository_integration": "derived-interface-layer",
+  "repository_code_bundled": false,
+  "tutorial_source_bundled": false,
+  "dataset_files_bundled": false,
+  "evidence_plan_schema": 1,
+  "evidence_tracks": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "repository_snapshots": {
+    "foundation": "3d9a5a77e99afac1fb06c8119575708f41ff77de",
+    "game_learning": "10ea7c2a9acfca679c27bfe32ad4ec6cbfe30527",
+    "physics_informed": "d1b0187c1641da1f60ad5bafe7667a3778d356d1"
+  },
+  "python_minimum": "3.10",
+  "recommended_work_branch": "work/attachment-corpus-topology-first-integration",
+  "owner_provided_fulltext_papers": 42,
+  "attachment_text_extractable_without_ocr": 42,
+  "core_voice_first_or_corresponding_papers": 20,
+  "attachment_ieee_transactions_papers": 17,
+  "selected_transactions_attachment_covered": 17,
+  "selected_transactions_attachment_coverage_pct": 94.44,
+  "owner_priority_transactions_rows": 17,
+  "owner_priority_transactions_covered": 17,
+  "owner_priority_transactions_coverage_pct": 100.0,
+  "owner_deprioritized_transactions_rows": 1,
+  "topology_first_experiment_support": true,
+  "synthetic_simulation_generation_support": true,
+  "node_level_topology_audit": true,
+  "local_attachment_manifest": "corpus/local_attachment_manifest.csv",
+  "local_corpus_metrics": "corpus/local_corpus_metrics.json"
+}

@@ -1,0 +1,318 @@
+profile_id: lu-xing-yang-ieee-transactions-current-v0.3.1
+version: 0.3.1
+status: attachment-key-corpus-calibrated
+last_updated: 2026-07-16
+owner: Lu-Xing Yang
+language: English
+
+scope:
+  domains:
+    - cybersecurity
+    - network science
+    - propagation dynamics
+    - optimal control
+    - differential games
+    - impulse and hybrid control
+    - cyber-social systems
+    - node-level network simulation
+    - reinforcement learning and model predictive control
+    - physics-informed learning
+  target_venues: [TIFS, TDSC, TSMC, TNSE, TCSS]
+  evidence_boundary:
+    owner_provided_fulltexts_analyzed: 42
+    core_voice_first_or_corresponding: 20
+    ieee_transactions_fulltexts_in_attachment: 17
+    selected_transactions_indexed: 18
+    selected_transactions_attachment_coverage_pct: 94.44
+    owner_priority_transactions_indexed: 17
+    owner_priority_transactions_fulltext_coverage_pct: 100.0
+    owner_deprioritized_transactions: 1
+    full_publication_universe_complete: false
+    copyrighted_fulltext_in_release: false
+    caution: >-
+      The attachment is a key-paper full-text corpus, not a verified complete
+      publication universe. Use Tier A papers for sentence-level style and the
+      broader corpus for research architecture.
+  calibration_limits:
+    - corresponding_author_status_does_not_prove_section_level_drafting
+    - many_credit_roles_remain_unknown
+    - abstract_level_metrics_are_stronger_than_section_level_microstyle_metrics
+    - tdsc_tsmc_and_tcss_tier_a_venue_samples_are_thin
+    - complete_publication_universe_and_collaborator_specific_voice_remain_open
+
+priority_order:
+  - truth_evidence_mathematical_validity_ethics
+  - current_journal_and_discipline_conventions
+  - project_scope_evidence_track_and_reproducibility_contract
+  - current_author_style
+  - historical_or_collaborator_phrasing
+
+style_tiers:
+  A_core_voice:
+    definition: first_author_or_corresponding_author_or_documented_original_draft
+    paper_count: 20
+    use: sentence_rhythm_lexical_moves_abstract_introduction_contribution_structure
+  B_editorial_influence:
+    definition: documented_review_editing_without_clear_original_draft_ownership
+    paper_count: 3
+    use: secondary_current_preference_signal
+  C_research_architecture_only:
+    definition: coauthored_without_writing_role_evidence_or_documented_nonwriting_role
+    paper_count: 19
+    use: method_combinations_experiment_design_topic_evolution_not_sentence_voice
+
+authorship_weights:
+  first_author_manuscript_lead: 1.50
+  corresponding_author: 2.00
+  coauthor_documented_original_draft: 2.00
+  coauthor_documented_review_editing: 0.80
+  coauthor_unclear_writing_role: 0.45
+  documented_nonwriting_contribution: 0.40
+  combination_rule: use_highest_applicable_authorship_signal_not_the_product
+recency_multipliers:
+  recent_2024_plus: 1.50
+  middle_2019_2023: 1.15
+  early_2018_or_earlier: 1.00
+venue_multipliers:
+  ieee_transactions: 1.15
+  other_ieee: 1.00
+  other_journal: 1.00
+
+stable_signature:
+  research_arc:
+    - begin_with_an_operational_security_network_or_social_problem
+    - distinguish_a_mechanism_representation_gap_from_an_intervention_strategy_gap
+    - introduce_a_named_model_framework_problem_or_algorithm_when_traceability_improves
+    - formulate_the_control_optimization_or_game_object_explicitly
+    - derive_theoretical_conditions_before_claiming_solution_quality
+    - implement_a_reproducible_solver_estimator_or_policy
+    - compare_under_matched_information_budget_and_scenarios
+    - return_to_cost_timing_scalability_or_security_policy_implications
+  abstract_moves:
+    ordered:
+      - context_and_stakes
+      - precise_gap_or_unresolved_decision
+      - model_or_framework
+      - optimization_game_or_control_problem
+      - theorem_or_solution_characterization
+      - algorithm_or_estimator_when_contributory
+      - evaluation_design_and_strongest_result
+      - bounded_strategic_or_operational_implication
+    current_soft_word_range: [190, 240]
+    current_soft_sentence_range: [8, 11]
+    ieee_transactions_weighted_mean_words: 224.3
+    recent_2024_plus_weighted_mean_words: 231.6
+  introduction_moves:
+    - threat_or_system_stakes_and_decision_maker
+    - mechanism_topology_behavior_or_information_difficulty
+    - closest_literature_families
+    - exact_limitation_after_each_family
+    - consolidated_modeling_and_strategy_gaps
+    - proposed_approach_and_fit_to_gap
+    - two_to_four_contributions_in_object_order
+    - organization_when_warranted
+  contribution_pattern:
+    preferred_count: [2, 4]
+    preferred_order:
+      - model_framework_or_problem
+      - theory_optimality_or_solution_characterization
+      - algorithm_solver_estimator_or_policy
+      - comparative_robustness_scalability_topology_or_predictive_evidence
+  methods_pattern:
+    - define_entities_states_units_topology_actions_information_and_timing_before_dense_equations
+    - explain_physical_or_operational_meaning_of_parameters
+    - separate_model_problem_theory_algorithm_and_evidence_contract
+    - use_a_theorem_ladder_with_clear_dependencies_and_scope
+    - map_theorem_conditions_to_code_and_tests
+  experiment_pattern:
+    - analytical_invariant_or_special_case_sanity
+    - independent_solver_or_simulator_check
+    - matched_baselines
+    - cost_effectiveness_objective_or_payoff_comparison
+    - sensitivity_ablation_and_failure_cases
+    - convergence_scalability_and_resource_use
+    - real_topology_trace_or_held_out_evidence_when_available
+    - bounded_practical_interpretation
+  result_narration:
+    - identify_figure_table_metric_and_comparison
+    - quantify_change_unit_and_uncertainty
+    - explain_mechanism_control_allocation_or_topology_reason
+    - state_implication_within_tested_range
+  conclusion_pattern:
+    - restate_decision_problem_and_framework
+    - summarize_model_theory_algorithm_and_evidence
+    - state_strongest_verified_implication
+    - name_model_data_topology_and_operational_limits
+    - give_specific_future_direction
+
+sentence_style:
+  all_attachment_weighted_abstract_mean_words_per_sentence: 21.4
+  core_voice_weighted_abstract_mean_words_per_sentence: 21.9
+  ieee_transactions_weighted_abstract_mean_words_per_sentence: 23.1
+  preferred_working_range: [19, 26]
+  preferred_soft_ceiling_words: 42
+  linter_warning_words: 45
+  mandatory_manual_review_words: 60
+  rhythm: >-
+    Moderate-to-long technical sentences support definitions, dependencies and
+    ordered research actions. Mix them with short transition, result and scope
+    sentences; do not stack multiple independent contributions in one sentence.
+  voice:
+    preferred: active_we_for_research_actions
+    examples:
+      - we formulate
+      - we derive
+      - we establish
+      - we develop
+      - we evaluate
+    passive_use: standard_procedure_or_irrelevant_actor_only
+  paragraph_logic:
+    - claim_purpose_or_gap_first
+    - mechanism_method_or_evidence_middle
+    - bounded_interpretation_or_transition_last
+
+lexical_preferences:
+  gap_transitions:
+    - However
+    - To address this limitation
+    - To address these limitations
+    - To bridge these gaps
+  progression_transitions:
+    - Based on
+    - On this basis
+    - Next
+    - Furthermore
+    - Finally
+  preferred_research_verbs:
+    - characterize
+    - formulate
+    - derive
+    - establish
+    - develop
+    - approximate
+    - evaluate
+    - demonstrate
+    - reveal
+    - indicate
+    - suggest
+  preferred_formal_objects:
+    - framework
+    - model
+    - problem
+    - strategy
+    - control
+    - optimality_system
+    - equilibrium
+    - algorithm
+    - cost_effectiveness
+    - scalability
+  connector_limits:
+    same_connector_per_500_words: 3
+    adjacent_sentence_repetition: avoid
+    do_not_force_corpus_phrases: true
+
+title_profile:
+  preferred_pattern: decision_or_security_problem_plus_mechanism_or_solution_notion
+  observed_attachment_counts:
+    colon_titles: 14
+    gerund_led_titles: 10
+    effective_or_cost_effective_titles: 10
+    approach_titles: 12
+    model_or_modeling_titles: 13
+    strategy_policy_or_scheme_titles: 11
+  adjective_gate:
+    - optimal
+    - practical
+    - robust
+    - real_world
+    - scalable
+
+claim_language:
+  first_novel_innovative: requires_logged_fulltext_novelty_audit
+  optimal: requires_theorem_or_explicit_numerical_stationarity_and_scope
+  equilibrium: requires_solution_concept_and_independent_deviation_or_residual_check
+  significant: requires_statistics_or_explicit_quantified_effect_and_defined_meaning
+  scalable: requires_size_sweep_complexity_or_resource_measurement
+  practical: requires_operational_mapping_and_realistic_constraints
+  outperform: requires_matched_budget_baselines_uncertainty_and_no_cherry_picking
+  robust: requires_declared_shift_set_repetitions_and_failure_reporting
+  real_world: requires_observed_outcomes_or_explicit_real_topology_trace_qualification
+
+current_evolution:
+  - longer_more_complete_abstracts_than_early_work
+  - explicit_related_work_gap_synthesis_and_contribution_headings
+  - named_framework_problem_and_algorithm_for_traceability
+  - stronger_layered_validation_with_real_or_synthetic_networks_scalability_and_robustness
+  - more_direct_translation_from_mathematical_results_to_security_or_policy_actions
+  - explicit_limitations_recommended_for_every_current_submission
+  - hierarchical_security_incentives_and_human_cyber_coupling_as_a_current_architecture_signal
+
+legacy_artifacts_to_correct:
+  - presents_challenging
+  - subject_verb_disagreement
+  - weak_generic_utility_endings
+  - thereby_evidencing
+  - repeated_on_this_basis_based_on_or_finally
+  - forced_backronyms_that_obscure_meaning
+  - overloaded_sentences_with_multiple_independent_claims
+  - optimality_or_equilibrium_language_based_only_on_one_run
+  - first_novel_innovative_superior_or_practical_without_evidence
+
+section_registers:
+  abstract: compressed_assertive_and_evidence_bounded
+  introduction: problem_driven_taxonomic_and_gap_explicit
+  related_work: comparative_and_claim_relevant
+  model: precise_neutral_definition_first
+  problem_formulation: admissibility_objective_information_and_solution_concept
+  theory: formal_dependency_aware_and_scope_explicit
+  algorithm: procedural_reproducible_residual_and_complexity_aware
+  experiments: measured_observation_then_mechanism_then_bounded_implication
+  discussion: strategic_but_model_data_and_topology_bounded
+  conclusion: closed_chain_with_explicit_limitations
+
+citation_integration:
+  status: not_yet_definitive_from_pdf_extraction
+  current_guidance:
+    - map_literature_families_with_claim_specific_citations
+    - place_citations_next_to_the_supported_claim
+    - reserve_narrative_author_mentions_for_seminal_or_directly_compared_work
+    - cite_every_universal_gap_or_dataset_statement
+    - verify_doi_and_reference_claim_alignment
+
+attachment_fallback_policy:
+  manifest: corpus/local_attachment_manifest.csv
+  metrics: corpus/local_corpus_metrics.json
+  paper_cards: corpus/attachment_paper_cards
+  private_expected_location: corpus/private/local_fulltext
+  verification_command: python -m luxing_ieee_skill verify-local-corpus corpus/private/local_fulltext
+  derived_reanalysis_command: python -m luxing_ieee_skill analyze-local-corpus corpus/private/local_fulltext --report reports/local_corpus_reanalysis.json
+  deakin_role: fill_missing_papers_resolve_versions_and_verify_publication_universe
+  full_corpus_claim: false
+
+topology_and_simulation_policy:
+  if_real_propagation_data_unavailable:
+    - acquire_semantically_compatible_observed_topology_when_possible
+    - otherwise_use_statistic_matched_or_multi_family_synthetic_graphs
+    - mark_all_parameters_states_and_counterfactuals_in_reality_ledger
+    - validate_node_ode_against_an_independent_solver_or_stochastic_ensemble
+    - use_multiple_graph_parameter_and_attack_seed_scenarios
+    - hold_out_complete_graphs_or_snapshots_for_generalization_claims
+    - never_equate_real_topology_with_real_dynamics_or_field_effectiveness
+
+style_conflict_policy:
+  action: use_higher_priority_rule_and_log_conflict
+  log_template: templates/STYLE_CONFLICT_LOG.md
+
+teaching_repository_policy:
+  use_for:
+    - research_method_doctrine
+    - notation_model_to_code_and_evidence_discipline
+    - numerical_simulation_and_data_validation_workflow
+  do_not_mix_into_default_style_metrics:
+    - README_prose
+    - code_comments_and_docstrings
+    - API_documentation
+    - teaching_note_boxes
+  rationale: >-
+    Tutorial and software documentation target a different audience and register.
+    They inform research design but do not count as paper-corpus prose.

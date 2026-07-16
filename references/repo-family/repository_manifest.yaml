@@ -1,0 +1,71 @@
+schema_version: 1
+prepared_date: 2026-07-15
+owner: Lu-Xing Yang
+snapshot_policy: pin_before_derivation
+repositories:
+  - id: foundation
+    full_name: LYang910920/network-control-differential-games
+    default_branch: main
+    visibility: public
+    snapshot_date: 2026-07-15
+    snapshot_commit: 3d9a5a77e99afac1fb06c8119575708f41ff77de
+    role: mathematical_and_numerical_foundation
+    canonical_paths:
+      - README.md
+      - docs/MODELS_AND_API.md
+      - docs/FROM_MODEL_TO_PAPER.md
+      - docs/REPRODUCIBILITY.md
+      - src/cybercontrol/graph_data.py
+      - docs/source/network_control_foundations.tex
+      - COPYRIGHT_AND_LICENSE.md
+      - THIRD_PARTY_NOTICES.md
+    license_boundary: no_blanket_license_all_rights_reserved_unless_file_or_upstream_notice_says_otherwise
+    integration_policy: paraphrase_and_derive_only_without_separate_owner_license_decision
+  - id: game_learning
+    full_name: LYang910920/note1-cyber-control-games
+    default_branch: main
+    visibility: public
+    snapshot_date: 2026-07-15
+    snapshot_commit: 10ea7c2a9acfca679c27bfe32ad4ec6cbfe30527
+    role: sampled_control_rl_marl_and_game_evaluation
+    canonical_paths:
+      - README.md
+      - docs/METHODS_AND_API.md
+      - docs/FROM_MODEL_TO_PAPER.md
+      - docs/REPRODUCIBILITY.md
+      - src/cybergames/node_env.py
+      - src/cybergames/adversarial_env.py
+      - src/cybergames/evaluation.py
+      - src/cybergames/node_evaluation.py
+      - docs/source/note1_game_learning_cyber_control.tex
+      - LICENSE
+      - NOTICE.md
+    license_boundary: MIT_unless_file_states_otherwise
+    integration_policy: attribution_required_mark_changes_and_do_not_present_teaching_examples_as_operational_models
+  - id: physics_informed
+    full_name: LYang910920/note2-pinn-pidl-cyber-control
+    default_branch: main
+    visibility: public
+    snapshot_date: 2026-07-15
+    snapshot_commit: d1b0187c1641da1f60ad5bafe7667a3778d356d1
+    role: inverse_pinn_pidl_neural_control_and_pmp_informed_learning
+    canonical_paths:
+      - README.md
+      - docs/METHODS_AND_API.md
+      - docs/FROM_MODEL_TO_PAPER.md
+      - docs/REPRODUCIBILITY.md
+      - src/cyberpinn/node_problem.py
+      - src/cyberpinn/node_inverse.py
+      - src/cyberpinn/evaluation.py
+      - docs/source/note2_pinn_pidl_cyber_control.tex
+      - LICENSE
+      - NOTICE.md
+    license_boundary: MIT_unless_file_states_otherwise
+    integration_policy: attribution_required_mark_changes_and_preserve_identifiability_and_validation_caveats
+release_rules:
+  bundle_raw_tutorial_source: false
+  bundle_repository_code: false
+  bundle_generated_figures: false
+  include_derived_method_maps: true
+  include_source_paths_and_snapshot_commits: true
+  refresh_before_public_release: true

@@ -1,0 +1,45 @@
+profile_id: ieee-transactions-common
+status: living-overlay
+rule_freshness:
+  instruction: verify_current_official_author_guidelines_before_submission
+  do_not_cache_without_date:
+    - page_limits
+    - overlength_fees
+    - open_access_fees
+    - template_versions
+    - data_and_ai_disclosure_rules
+    - supplementary_material_rules
+common_expectations:
+  - precise_problem_and_threat_or_system_context
+  - explicit_related_work_and_novelty_boundary
+  - reproducible_system_model_and_assumptions
+  - formal_or_empirical_support_proportional_to_claims
+  - fair_baselines_and_ablation
+  - readable_figures_tables_and_equations
+  - limitations_and_scope
+  - complete_references_and_doi_checks
+  - current_ieee_style_and_template
+abstract:
+  guidance:
+    - state_problem_gap_method_results_and_implication
+    - prefer_numeric_results_when_available
+    - avoid_citations_and_undefined_acronyms_unless_journal_allows_and_necessary
+introduction:
+  guidance:
+    - establish_importance_without_generic_throat_clearing
+    - distinguish_problem_gap_from_method_gap
+    - compare_closest_work_not_only_broad_categories
+    - make_contribution_items_testable
+experiments:
+  guidance:
+    - state_datasets_networks_parameters_hardware_seeds_and_metrics
+    - ensure_budget_and_information_fairness
+    - include_uncertainty_and_failure_cases
+reproducibility:
+  minimum:
+    - environment
+    - exact_configs
+    - seeds
+    - data_provenance
+    - figure_table_commands
+    - commit_or_archive_identifier

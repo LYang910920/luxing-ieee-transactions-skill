@@ -1,0 +1,37 @@
+schema_version: 1
+dataset_id: TBD
+canonical_title: TBD
+provider: TBD
+official_url: TBD
+accessed_date: TBD
+version: TBD
+doi_or_citation: TBD
+local_checksum: TBD
+licence_or_terms: TBD
+academic_use_allowed: TBD
+redistribution_allowed: TBD
+citation_requirements: []
+raw_data_location: private_or_external_only
+entities: []
+units: []
+time_fields: []
+node_or_host_fields: []
+labels: []
+topology_available: false
+collection_environment: TBD
+sampling_process: TBD
+missingness: TBD
+censoring_or_aggregation: TBD
+known_artifacts: []
+privacy_or_sensitive_fields: []
+ethics_review_needed: TBD
+intended_roles:
+  topology: false
+  trace_replay: false
+  observation_model: false
+  parameter_calibration: false
+  external_validation: false
+  testbed_benchmark: false
+claim_supported: TBD
+claims_not_supported: []
+owner_notes: TBD

@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "profile_status": "attachment-key-corpus-calibrated",
+  "generated_date": "2026-07-16",
+  "source_boundary": {
+    "owner_provided_fulltext_pdfs": 42,
+    "fulltext_extractable_without_ocr": 42,
+    "copyrighted_fulltext_in_release": false,
+    "publication_universe_complete": false,
+    "selected_ieee_transactions_manifest_rows": 18,
+    "selected_transactions_with_attachment_fulltext": 17,
+    "selected_transactions_attachment_coverage_pct": 94.44,
+    "owner_priority_transactions_rows": 17,
+    "owner_priority_transactions_with_fulltext": 17,
+    "owner_priority_transactions_coverage_pct": 100.0,
+    "owner_deprioritized_transactions_rows": 1
+  },
+  "subsets": {
+    "all_attachment": {
+      "papers": 42,
+      "weighted_abstract_words": 200.0,
+      "weighted_abstract_sentences": 9.4,
+      "weighted_abstract_mean_sentence_words": 21.4,
+      "median_abstract_max_sentence_words": 34.0
+    },
+    "core_voice_first_or_corresponding": {
+      "papers": 20,
+      "weighted_abstract_words": 197.7,
+      "weighted_abstract_sentences": 9.1,
+      "weighted_abstract_mean_sentence_words": 21.9,
+      "median_abstract_max_sentence_words": 38.5
+    },
+    "first_author": {
+      "papers": 15,
+      "weighted_abstract_words": 172.9,
+      "weighted_abstract_sentences": 8.5,
+      "weighted_abstract_mean_sentence_words": 20.6,
+      "median_abstract_max_sentence_words": 34.0
+    },
+    "corresponding_author": {
+      "papers": 9,
+      "weighted_abstract_words": 210.3,
+      "weighted_abstract_sentences": 9.1,
+      "weighted_abstract_mean_sentence_words": 23.1,
+      "median_abstract_max_sentence_words": 44.0
+    },
+    "ieee_transactions": {
+      "papers": 17,
+      "weighted_abstract_words": 224.3,
+      "weighted_abstract_sentences": 9.9,
+      "weighted_abstract_mean_sentence_words": 23.1,
+      "median_abstract_max_sentence_words": 42.0
+    },
+    "recent_2024_plus": {
+      "papers": 19,
+      "weighted_abstract_words": 231.6,
+      "weighted_abstract_sentences": 10.4,
+      "weighted_abstract_mean_sentence_words": 22.7,
+      "median_abstract_max_sentence_words": 39.0
+    },
+    "middle_2019_2023": {
+      "papers": 11,
+      "weighted_abstract_words": 197.1,
+      "weighted_abstract_sentences": 9.5,
+      "weighted_abstract_mean_sentence_words": 21.2,
+      "median_abstract_max_sentence_words": 36.0
+    },
+    "early_2018_or_earlier": {
+      "papers": 12,
+      "weighted_abstract_words": 151.4,
+      "weighted_abstract_sentences": 7.8,
+      "weighted_abstract_mean_sentence_words": 19.5,
+      "median_abstract_max_sentence_words": 33.0
+    }
+  },
+  "counts": {
+    "first_author": 15,
+    "corresponding_author": 9,
+    "core_voice_distinct": 20,
+    "ieee_transactions": 17,
+    "all_ieee_venues": 20,
+    "recent_2024_plus": 19,
+    "style_tiers": {
+      "C_research_architecture_only": 19,
+      "A_core_voice": 20,
+      "B_editorial_influence": 3
+    }
+  },
+  "abstract_move_document_frequency": {
+    "all_attachment": {
+      "model_framework": 42,
+      "evaluation": 33,
+      "context_stakes": 42,
+      "result_claim": 32,
+      "implication": 33,
+      "theory_conditions": 33,
+      "algorithm_solver": 16,
+      "decision_problem": 29,
+      "gap_limitation": 15
+    },
+    "core_voice": {
+      "model_framework": 20,
+      "evaluation": 14,
+      "context_stakes": 20,
+      "result_claim": 17,
+      "implication": 13,
+      "theory_conditions": 18,
+      "gap_limitation": 5,
+      "decision_problem": 12,
+      "algorithm_solver": 7
+    },
+    "recent_2024_plus": {
+      "model_framework": 19,
+      "evaluation": 17,
+      "algorithm_solver": 12,
+      "context_stakes": 19,
+      "decision_problem": 16,
+      "result_claim": 14,
+      "implication": 16,
+      "theory_conditions": 13,
+      "gap_limitation": 14
+    },
+    "early_2018_or_earlier": {
+      "model_framework": 12,
+      "evaluation": 8,
+      "context_stakes": 12,
+      "result_claim": 8,
+      "implication": 6,
+      "theory_conditions": 10,
+      "decision_problem": 4,
+      "algorithm_solver": 1
+    }
+  },
+  "section_category_document_frequency": {
+    "all_attachment": {
+      "conclusion": 40,
+      "introduction": 42,
+      "theory": 32,
+      "experiments": 30,
+      "related_work": 25,
+      "method_algorithm": 23,
+      "problem_formulation": 24,
+      "model": 15,
+      "discussion_limits": 16
+    },
+    "ieee_transactions": {
+      "model": 3,
+      "conclusion": 17,
+      "introduction": 17,
+      "theory": 12,
+      "method_algorithm": 13,
+      "discussion_limits": 6,
+      "related_work": 14,
+      "experiments": 14,
+      "problem_formulation": 14
+    },
+    "recent_2024_plus": {
+      "theory": 13,
+      "introduction": 19,
+      "experiments": 16,
+      "conclusion": 17,
+      "related_work": 16,
+      "method_algorithm": 16,
+      "problem_formulation": 14,
+      "model": 5,
+      "discussion_limits": 5
+    },
+    "early_2018_or_earlier": {
+      "conclusion": 12,
+      "introduction": 12,
+      "theory": 11,
+      "experiments": 7,
+      "model": 6,
+      "discussion_limits": 6,
+      "problem_formulation": 2,
+      "related_work": 1
+    }
+  },
+  "heading_feature_document_frequency": {
+    "all_attachment": {
+      "motivation": 12,
+      "problem_statement": 16,
+      "contributions": 25,
+      "novelty": 10,
+      "paper_organization": 17,
+      "related_work": 28,
+      "limitations_future": 12
+    },
+    "recent_2024_plus": {
+      "motivation": 10,
+      "problem_statement": 12,
+      "contributions": 18,
+      "novelty": 8,
+      "paper_organization": 9,
+      "related_work": 18,
+      "limitations_future": 10
+    },
+    "early_2018_or_earlier": {
+      "paper_organization": 2,
+      "related_work": 1,
+      "limitations_future": 1
+    }
+  },
+  "core_voice_section_sentence_metrics": {
+    "introduction": {
+      "papers_with_detected_section": 20,
+      "weighted_mean_words_per_sentence": 21.9
+    },
+    "related_work": {
+      "papers_with_detected_section": 9,
+      "weighted_mean_words_per_sentence": 23.2
+    },
+    "problem_formulation": {
+      "papers_with_detected_section": 8,
+      "weighted_mean_words_per_sentence": 23.7
+    },
+    "model": {
+      "papers_with_detected_section": 6,
+      "weighted_mean_words_per_sentence": 18.9
+    },
+    "theory": {
+      "papers_with_detected_section": 7,
+      "weighted_mean_words_per_sentence": 19.7
+    },
+    "method_algorithm": {
+      "papers_with_detected_section": 6,
+      "weighted_mean_words_per_sentence": 24.9
+    },
+    "experiments": {
+      "papers_with_detected_section": 9,
+      "weighted_mean_words_per_sentence": 21.6
+    },
+    "discussion_limits": {
+      "papers_with_detected_section": 9,
+      "weighted_mean_words_per_sentence": 23.3
+    },
+    "conclusion": {
+      "papers_with_detected_section": 20,
+      "weighted_mean_words_per_sentence": 22.3
+    }
+  },
+  "abstract_phrase_document_frequency": [
+    {
+      "phrase": "first",
+      "documents": 22,
+      "occurrences": 28
+    },
+    {
+      "phrase": "based on",
+      "documents": 16,
+      "occurrences": 21
+    },
+    {
+      "phrase": "finally",
+      "documents": 15,
+      "occurrences": 15
+    },
+    {
+      "phrase": "this paper addresses",
+      "documents": 13,
+      "occurrences": 13
+    },
+    {
+      "phrase": "cost-effective",
+      "documents": 12,
+      "occurrences": 20
+    },
+    {
+      "phrase": "optimality system",
+      "documents": 11,
+      "occurrences": 15
+    },
+    {
+      "phrase": "next",
+      "documents": 11,
+      "occurrences": 11
+    },
+    {
+      "phrase": "on this basis",
+      "documents": 10,
+      "occurrences": 10
+    },
+    {
+      "phrase": "second",
+      "documents": 10,
+      "occurrences": 10
+    },
+    {
+      "phrase": "nash equilibrium",
+      "documents": 9,
+      "occurrences": 15
+    },
+    {
+      "phrase": "iterative algorithm",
+      "documents": 8,
+      "occurrences": 8
+    },
+    {
+      "phrase": "comparative experiments",
+      "documents": 7,
+      "occurrences": 7
+    },
+    {
+      "phrase": "however",
+      "documents": 7,
+      "occurrences": 7
+    },
+    {
+      "phrase": "to address",
+      "documents": 7,
+      "occurrences": 7
+    },
+    {
+      "phrase": "we propose",
+      "documents": 7,
+      "occurrences": 7
+    },
+    {
+      "phrase": "numerical experiments",
+      "documents": 6,
+      "occurrences": 6
+    },
+    {
+      "phrase": "to our knowledge",
+      "documents": 6,
+      "occurrences": 6
+    },
+    {
+      "phrase": "we derive",
+      "documents": 6,
+      "occurrences": 6
+    },
+    {
+      "phrase": "then",
+      "documents": 5,
+      "occurrences": 6
+    },
+    {
+      "phrase": "furthermore",
+      "documents": 3,
+      "occurrences": 3
+    },
+    {
+      "phrase": "this paper aims",
+      "documents": 3,
+      "occurrences": 3
+    },
+    {
+      "phrase": "to bridge",
+      "documents": 3,
+      "occurrences": 3
+    },
+    {
+      "phrase": "we formulate",
+      "documents": 3,
+      "occurrences": 3
+    },
+    {
+      "phrase": "to the best of our knowledge",
+      "documents": 2,
+      "occurrences": 2
+    },
+    {
+      "phrase": "we establish",
+      "documents": 2,
+      "occurrences": 2
+    },
+    {
+      "phrase": "results demonstrate",
+      "documents": 1,
+      "occurrences": 1
+    },
+    {
+      "phrase": "results suggest",
+      "documents": 1,
+      "occurrences": 1
+    },
+    {
+      "phrase": "simulation experiments",
+      "documents": 1,
+      "occurrences": 1
+    },
+    {
+      "phrase": "the results indicate",
+      "documents": 1,
+      "occurrences": 1
+    },
+    {
+      "phrase": "we develop",
+      "documents": 1,
+      "occurrences": 1
+    }
+  ],
+  "title_feature_document_frequency": {
+    "colon": 14,
+    "gerund_led": 10,
+    "effective_or_cost_effective": 10,
+    "approach": 12,
+    "model_or_modeling": 13,
+    "strategy_policy_scheme": 11
+  },
+  "method_tag_document_frequency": {
+    "game_theory": 13,
+    "differential_game": 10,
+    "stability_threshold": 17,
+    "epidemic_or_spreading_model": 23,
+    "reinforcement_learning": 3,
+    "optimal_control": 14,
+    "impulse_control": 6,
+    "model_predictive_control": 2,
+    "attack_graph": 1,
+    "hybrid_control": 1,
+    "agent_or_discrete_simulation": 1,
+    "stackelberg_game": 1,
+    "bilevel_optimization": 1
+  },
+  "evidence_tag_document_frequency": {
+    "real_network_topology": 6,
+    "convergence": 5,
+    "simulation": 8,
+    "scalability": 4,
+    "synthetic_networks": 5,
+    "sensitivity": 13,
+    "numerical_experiments": 9,
+    "comparative_experiments": 9
+  },
+  "limitations": {
+    "abstract_extraction": "Deterministic PDF text extraction; publisher layout can slightly affect counts.",
+    "coauthorship": "Sentence-level style is weighted toward first/corresponding-author papers; other coauthored papers primarily inform research architecture.",
+    "corpus_scope": "The attachment is a key-paper corpus, not a verified complete publication universe.",
+    "citation_style": "Citation-integration statistics were not treated as definitive because PDF parsing can distort inline references.",
+    "version_boundary": "The 2026 TDSC-matched item is an author manuscript; publisher-final metadata and appendices remain unverified."
+  }
+}

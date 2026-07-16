@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scenario_id": "TBD",
+  "scientific_question": "TBD",
+  "graph": {
+    "topology_id": "TBD",
+    "source": "observed | generated | statistic_matched | TBD",
+    "family": "TBD",
+    "seed": "TBD",
+    "nodes": "TBD",
+    "directed": "TBD",
+    "weighted": "TBD",
+    "parameters": {}
+  },
+  "dynamics": {
+    "model": "TBD",
+    "parameter_profile": "TBD",
+    "parameter_seed": "TBD",
+    "initial_state_rule": "TBD",
+    "attack_seed_rule": "TBD"
+  },
+  "decision": {
+    "information_structure": "TBD",
+    "action_timing": "TBD",
+    "budget": "TBD",
+    "horizon": "TBD"
+  },
+  "simulation": {
+    "type": "ode | gillespie | monte_carlo | agent_based | event_driven | sampled_closed_loop | hybrid | TBD",
+    "numerical_settings": {},
+    "replications": 0,
+    "common_random_numbers": false
+  },
+  "validation": {
+    "independent_check": "TBD",
+    "invariants": [],
+    "failure_policy": "TBD"
+  }
+}

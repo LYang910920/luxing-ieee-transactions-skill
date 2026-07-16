@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "project_name": "TBD",
+  "main_claim_type": "control_performance",
+  "main_claim_statement": "TBD",
+  "primary_evidence_track": "B",
+  "secondary_evidence_tracks": [
+    "A"
+  ],
+  "repository_layers": [
+    "foundation",
+    "game_learning"
+  ],
+  "data": {
+    "uses_real_topology": false,
+    "uses_real_traces": false,
+    "uses_real_data": false,
+    "dataset_cards": [],
+    "data_to_model_map": "data/DATA_TO_MODEL_MAP.csv",
+    "license_checked": false,
+    "version_or_hash_recorded": false,
+    "privacy_ethics_checked": false,
+    "split_strategy": "TBD",
+    "leakage_audit": false,
+    "reality_ledger": "data/REALITY_LEDGER.csv",
+    "adapter_contracts": [
+      "data/ADAPTER_CONTRACT.yaml"
+    ],
+    "topology_evidence_level": "T1",
+    "topology_cards": [
+      "topology/TOPOLOGY_CARD.yaml"
+    ]
+  },
+  "simulation": {
+    "uses_simulation": true,
+    "simulator_type": "sampled_closed_loop",
+    "state_action_timing_defined": false,
+    "verification_checks": [],
+    "validation_target": "TBD",
+    "replications": 0,
+    "common_random_numbers": false,
+    "fidelity_boundary": "TBD",
+    "counterfactual_assumptions": "TBD",
+    "synthetic_scenario_spec": "simulation/SYNTHETIC_SCENARIO_SPEC.yaml",
+    "node_level_experiment_matrix": "simulation/NODE_LEVEL_EXPERIMENT_MATRIX.csv"
+  },
+  "validation": {
+    "independent_solver_or_oracle": false,
+    "matched_baselines": [],
+    "held_out_axes": [],
+    "uncertainty_reported": false,
+    "failure_cases_retained": false,
+    "deviation_diagnostics": false,
+    "identifiability_assessment": false,
+    "operational_metrics": [],
+    "causal_design": "none",
+    "claim_scope": "TBD"
+  }
+}

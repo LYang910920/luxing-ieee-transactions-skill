@@ -1,0 +1,57 @@
+overlays:
+  TIFS:
+    full_name: IEEE Transactions on Information Forensics and Security
+    center_of_gravity:
+      - security_threat_and_adversary
+      - defense_or_detection_mechanism
+      - formal_security_or_decision_analysis
+      - convincing_security_evaluation
+    emphasize:
+      - threat_model_and_attacker_capabilities
+      - defender_information_and_resource_constraints
+      - comparison_with_security_specific_baselines
+      - operational_security_metrics
+      - misuse_and_failure_boundaries
+  TDSC:
+    full_name: IEEE Transactions on Dependable and Secure Computing
+    center_of_gravity:
+      - dependable_or_secure_system_behavior
+      - explicit_assumptions_and_guarantees
+      - failure_resilience_and_system_tradeoffs
+    emphasize:
+      - system_architecture_and_fault_threat_models
+      - guarantee_scope
+      - overhead_and_failure_modes
+      - implementation_or_system_level_validation
+  TSMC:
+    full_name: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
+    center_of_gravity:
+      - systems_modeling_analysis_and_control
+      - human_machine_or_cyber_physical_interactions_when_relevant
+      - system_level_insight
+    emphasize:
+      - complete_system_view
+      - stability_feasibility_and_control_interpretation
+      - parameter_meaning_and_system_implications
+  TNSE:
+    full_name: IEEE Transactions on Network Science and Engineering
+    center_of_gravity:
+      - network_structure_dynamics_and_intervention
+      - topology_heterogeneity_and_scale
+      - network_level_theory_and_evaluation
+    emphasize:
+      - aggregate_degree_node_or_graph_resolution_choice
+      - topology_sensitivity
+      - real_and_synthetic_networks
+      - scalability_and_network_metrics
+  TCSS:
+    full_name: IEEE Transactions on Computational Social Systems
+    center_of_gravity:
+      - computational_model_of_social_behavior_or_information_dynamics
+      - human_awareness_opinion_incentive_or_policy_mechanism
+      - social_and_economic_implications
+    emphasize:
+      - behavior_assumptions_and_ethics
+      - social_network_topology
+      - awareness_or_cognition_interaction
+      - policy_interpretation_and_harm_boundaries

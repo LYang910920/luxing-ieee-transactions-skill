@@ -1,0 +1,18 @@
+schema_version: 1
+adapter_id: TBD
+adapter_role: graph | trace | observation | telemetry | testbed | TBD
+input_dataset_id: TBD
+input_files_or_tables: []
+input_schema: []
+output_model_objects: []
+unit_conversions: []
+time_alignment: TBD
+node_or_entity_alignment: TBD
+missingness_handling: TBD
+label_visibility_policy: TBD
+fit_scope: training_only | none | TBD
+future_information_blocked: TBD
+validation_checks: []
+failure_policy: TBD
+source_commit: TBD
+licence_reviewed: TBD

@@ -1,0 +1,32 @@
+schema_version: 1
+simulator_id: TBD
+simulator_type: deterministic_ode | stochastic_process | agent_based | discrete_event | sampled_closed_loop | trace_replay | emulation | cyber_range | hardware_in_loop
+canonical_model_source: TBD
+state_order: []
+state_units: []
+actions: []
+action_units: []
+observation_model: TBD
+event_order: TBD
+flow_step_or_event_clock: TBD
+impulse_or_reset_map: TBD
+topology_source: synthetic | real | calibrated | TBD
+exogenous_event_source: synthetic | trace | testbed | TBD
+random_components: []
+seeds: []
+replications: TBD
+common_random_numbers: false
+warmup: TBD
+horizon: TBD
+termination_conditions: []
+constraint_projection: TBD
+verification_checks: []
+validation_target: TBD
+fidelity_boundary: TBD
+counterfactual_assumptions: TBD
+matched_policy_information: TBD
+matched_budget: TBD
+failure_logging: TBD
+output_manifest: TBD
+repository_commit: TBD
+environment: TBD

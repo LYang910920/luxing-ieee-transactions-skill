@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lu-Xing IEEE Research"
+  short_description: "Personal IEEE Transactions research workflow"
+  default_prompt: "Use $luxing-ieee-transactions to scope and develop my next IEEE Transactions research paper."

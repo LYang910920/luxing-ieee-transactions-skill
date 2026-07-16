@@ -1,0 +1,1 @@
+graph_id,source_type,evidence_level,source_or_generator,version_hash,scientific_role,directed,weighted,temporal,nodes,edges,density,mean_degree,max_degree,clustering,assortativity,modularity,spectral_radius,preprocessing,normalization,split_role,graph_seed,parameter_seed,claim_supported,status

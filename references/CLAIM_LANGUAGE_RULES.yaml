@@ -1,0 +1,92 @@
+claims:
+  first:
+    severity: blocking_without_evidence
+    required:
+      - dated_search_log
+      - closest_fulltexts
+      - exact_claim_dimension
+      - negative_evidence_review
+    safer_alternatives:
+      - to_the_best_of_our_knowledge_after_search
+      - differs_from_prior_work_by
+  novel:
+    severity: blocking_without_evidence
+    required:
+      - novelty_matrix
+      - non_equivalence_explanation
+  innovative:
+    severity: blocking_without_evidence
+    required:
+      - dated_search_log
+      - closest_fulltexts
+      - exact_technical_difference
+      - negative_evidence_review
+  optimal:
+    severity: blocking_if_unscoped
+    required_any:
+      - global_optimality_theorem
+      - local_optimality_statement
+      - pmp_stationarity_statement
+      - certified_optimality_gap
+    forbidden_shortcut: lowest_cost_among_tested_runs_is_not_automatically_optimal
+  equilibrium:
+    severity: blocking_if_unverified
+    required:
+      - solution_concept
+      - admissible_strategy_set
+      - independent_deviation_or_best_response_check
+  significant:
+    severity: warning_or_blocking_by_context
+    required_any:
+      - statistical_test
+      - confidence_interval
+      - explicitly_defined_material_effect_with_numeric_value
+  scalable:
+    severity: warning_without_sweep
+    required:
+      - problem_size_axis
+      - runtime_or_memory_or_sample_complexity
+      - hardware_and_implementation_context
+  practical:
+    severity: warning_without_mapping
+    required:
+      - realistic_constraints
+      - deployment_mapping
+      - limitations
+  outperform:
+    severity: blocking_without_fairness
+    required:
+      - matched_information
+      - matched_resource_budget
+      - tuned_relevant_baselines
+      - repeated_runs_or_multiple_instances
+      - uncertainty_and_failure_reporting
+  robust:
+    severity: blocking_if_unscoped
+    required:
+      - declared_shift_or_perturbation_set
+      - repeated_instances_or_runs
+      - uncertainty
+      - retained_failures
+  real_world:
+    severity: blocking_without_observed_outcomes
+    required:
+      - observed_outcomes_or_measured_intervention_effects
+      - provenance_and_study_design
+      - external_validity_boundary
+    forbidden_shortcut: observed_topology_or_trace_alone_is_not_real_world_validation
+  recovery:
+    severity: blocking_if_truth_or_identifiability_is_missing
+    required_any:
+      - generated_truth_with_independent_forward_validation
+      - independently_known_ground_truth_and_identifiability
+    safer_alternatives:
+      - calibration
+      - effective_rate_estimation
+      - partial_identification
+  causal:
+    severity: blocking_without_causal_design
+    required:
+      - prospective_randomized_quasi_experimental_or_other_defensible_design
+      - explicit_counterfactual_strategy
+      - assumptions_and_sensitivity

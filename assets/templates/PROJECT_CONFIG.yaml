@@ -1,0 +1,52 @@
+project_name: TBD
+target_journal: TIFS
+target_journal_rules:
+  official_source: TBD
+  checked_date: TBD
+article_type: regular_research_article
+research_question: TBD
+operational_decision:
+  actor: TBD
+  adversary_or_uncertainty: TBD
+  action: TBD
+  resource_constraint: TBD
+  objective: TBD
+  evaluation_unit: TBD
+main_claim: TBD
+main_claim_type: mechanism | numerical_method | control_performance | game_stability | parameter_recovery | predictive_generalization | operational_feasibility | causal_effect | TBD
+evidence:
+  primary_track: A | B | C | D | E | TBD
+  secondary_tracks: []
+  repository_layers: []
+  evidence_plan: evidence/EVIDENCE_PLAN.json
+  reality_ledger: data/REALITY_LEDGER.csv
+model:
+  resolution: aggregate | degree | node | graph | event | hybrid | TBD
+  states: []
+  units: []
+  topology: TBD
+  observation_model: TBD
+control_or_game:
+  notion: optimal_control | impulse_control | differential_game | stackelberg | nash | mpc | MDP | Markov_game | TBD
+  action_sets: []
+  constraints: []
+data_or_simulation:
+  real_topology: false
+  real_traces: false
+  real_observations: false
+  testbed_or_emulation: false
+  dataset_cards: []
+  adapter_contracts: []
+  simulation_contract: simulation/SIMULATION_CONTRACT.yaml
+novelty_status: not_audited
+theory_status: not_started
+code_status: not_started
+experiment_status: not_started
+style_profile: profiles/lu_xing_yang_current.yaml
+reproducibility:
+  repository: TBD
+  commit: TBD
+  environment: TBD
+  seeds: []
+  data_versions_or_hashes: []
+  source_repository_commits: []

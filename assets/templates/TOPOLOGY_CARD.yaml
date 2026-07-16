@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "topology_id": "TBD",
+  "topology_evidence_level": "T1",
+  "scientific_role": "contact | communication | influence | dependency | attack_path | other | TBD",
+  "source_type": "observed | temporal_observed | statistic_matched | synthetic | TBD",
+  "source_name": "TBD",
+  "official_url": "TBD",
+  "citation": "TBD",
+  "licence_or_terms": "TBD",
+  "license_checked": false,
+  "version_or_hash": "TBD",
+  "version_or_hash_recorded": false,
+  "graph": {
+    "node_unit": "TBD",
+    "edge_unit": "TBD",
+    "directed": false,
+    "weighted": false,
+    "signed": false,
+    "temporal": false,
+    "multilayer": false,
+    "adjacency_semantics": "A[i,j] means j influences i",
+    "self_loop_policy": "TBD",
+    "parallel_edge_policy": "TBD",
+    "isolated_node_policy": "TBD",
+    "component_policy": "TBD",
+    "weight_transformation": "none | TBD",
+    "normalization": "none | row | max-degree | spectral | other | TBD",
+    "timestamp_handling": "not_applicable | TBD",
+    "node_attribute_provenance": "none | TBD"
+  },
+  "preprocessing": {
+    "script": "TBD",
+    "deterministic": false,
+    "raw_immutable_copy": false,
+    "statistics_before": {},
+    "statistics_after": {},
+    "validation_checks": []
+  },
+  "synthetic_design": {
+    "generator_families": [],
+    "generator_parameters": {},
+    "target_observed_statistics": [],
+    "goodness_of_match": "not_applicable | TBD",
+    "graph_seeds": []
+  },
+  "split": {
+    "claims_topology_generalization": false,
+    "strategy": "not_applicable | TBD",
+    "held_out_graphs_or_snapshots": [],
+    "leakage_audit": false
+  },
+  "model_mapping": {
+    "state_resolution": "node_level",
+    "graph_to_model_map": "topology/GRAPH_TO_MODEL_MAP.csv",
+    "dynamics_observed_or_synthetic": "synthetic | calibrated | observed | mixed | TBD",
+    "parameter_provenance": "TBD",
+    "attack_seed_rules": []
+  },
+  "validation": {
+    "matched_topology_controls": [],
+    "independent_solver_or_stochastic_ensemble": false,
+    "topology_perturbations": [],
+    "multiple_graph_instances": false,
+    "failure_cases_retained": false
+  },
+  "claim_boundary": "TBD",
+  "claims_not_supported": []
+}
